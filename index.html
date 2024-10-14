@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+    <title>Fadi's First Website</title>
+    <style>
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is my first web page!</p>
+    <div id="home" class="page active">
+        <h1>Welcome to Fadi's First Website</h1>
+        <p>This is my first web page!</p>
+        <a href="#" onclick="showPage('about'); return false;">About Me</a>
+    </div>
+
+    <div id="about" class="page">
+        <h1>About Fadi</h1>
+        <ul>
+            <li>Fact 1: I'm learning to code!</li>
+            <li>Fact 2: This is my first website.</li>
+            <li>Fact 3: I am Adrian's daddy</li>
+        </ul>
+        <a href="#" onclick="showPage('home'); return false;">Back to Home</a>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
