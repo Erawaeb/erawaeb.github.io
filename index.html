@@ -1,66 +1,89 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Assisted Coding Journey</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>AI-Assisted Coding Odyssey</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
-<body>
-    <div id="bg-animation"></div>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#projects">Projects</a></li>
+<body class="bg-black text-white overflow-x-hidden">
+    <div id="bg-animation" class="fixed top-0 left-0 w-full h-full z-0"></div>
+    
+    <header class="fixed top-0 left-0 w-full z-50 bg-opacity-50 bg-black backdrop-filter backdrop-blur-md">
+        <nav class="container mx-auto px-6 py-3">
+            <ul class="flex justify-center space-x-8">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#vision" class="nav-link">Vision</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="fullscreen">
-            <h1>AI-Assisted Coding Journey</h1>
-            <p>Exploring the frontiers of AI-assisted coding</p>
-            <a href="#about" class="cta-button">Discover More</a>
+        <section id="home" class="h-screen flex items-center justify-center relative">
+            <div class="text-center">
+                <h1 class="text-6xl font-bold mb-4 gradient-text">AI-Assisted Coding Odyssey</h1>
+                <p class="text-xl mb-8">Exploring the frontiers of AI-assisted development</p>
+                <a href="#about" class="cta-button">Embark on the Journey</a>
+            </div>
         </section>
 
-        <section id="about" class="fullscreen">
-            <h2>About This Odyssey</h2>
-            <p>Welcome to my first website. I have no prior coding experience, but with the help of an AI assistant named Claude, I'm embarking on a journey to prove that learning to code solely through AI guidance is possible. Join me as I navigate this exciting new frontier!</p>
-            <a href="https://x.com/erawaeb" target="_blank" class="cta-button">Follow the Journey on X</a>
+        <section id="about" class="min-h-screen flex items-center justify-center py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-8 gradient-text">About This Odyssey</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">
+                    Welcome to a groundbreaking experiment in AI-assisted coding. With no prior experience, 
+                    I'm navigating the complex world of web development guided solely by an AI assistant. 
+                    This website is a living testament to the potential of human-AI collaboration in creating digital experiences.
+                </p>
+                <a href="https://x.com/erawaeb" target="_blank" class="cta-button">Follow the Journey on X</a>
+            </div>
         </section>
 
-        <section id="vision" class="fullscreen">
-            <h2>The Vision</h2>
-            <p>Imagine a world where anyone can bring their ideas to life through code, guided by AI. This website is just the beginning—a testament to the power of human creativity amplified by artificial intelligence.</p>
-            <a href="https://x.com/erawaeb" target="_blank" class="cta-button">Join the Conversation</a>
+        <section id="vision" class="min-h-screen flex items-center justify-center py-20 bg-opacity-50 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-8 gradient-text">The Vision</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">
+                    Imagine a world where the barrier between idea and implementation dissolves, 
+                    where creativity is amplified by artificial intelligence, and where anyone can bring 
+                    their digital dreams to life. This project is just the beginning—a glimpse into a 
+                    future where AI becomes the ultimate coding companion.
+                </p>
+                <a href="https://x.com/erawaeb" target="_blank" class="cta-button">Join the Conversation</a>
+            </div>
         </section>
 
-        <section id="projects" class="fullscreen">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>This Website</h3>
-                    <p>My first coding project: A responsive, modern website built with HTML, CSS, and JavaScript.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Future Project 1</h3>
-                    <p>Coming soon: An exciting new project that will showcase my growing coding skills.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Future Project 2</h3>
-                    <p>Stay tuned for another innovative project as I continue my AI-assisted learning journey.</p>
+        <section id="projects" class="min-h-screen py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12 gradient-text text-center">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card">
+                        <h3 class="text-2xl font-bold mb-4">This Website</h3>
+                        <p>A responsive, modern website built with HTML, CSS, and JavaScript, enhanced with Three.js and GSAP.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="text-2xl font-bold mb-4">AI Chat Interface</h3>
+                        <p>Coming soon: An interactive AI chatbot interface demonstrating real-time communication.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="text-2xl font-bold mb-4">Data Visualization</h3>
+                        <p>Stay tuned: A dynamic data visualization project showcasing the power of D3.js.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 AI-Assisted Coding Journey. All rights reserved.</p>
+    <footer class="bg-opacity-50 bg-black backdrop-filter backdrop-blur-md py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 AI-Assisted Coding Odyssey. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
