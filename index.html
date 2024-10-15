@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fadi's Awesome Website</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to Fadi's Awesome Website</h1>
-        <nav>
+        <h1>Fadi's Awesome Website</h1>
+        <nav id="main-nav">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#interests">Interests</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -24,19 +25,19 @@
             <p>Hello! I'm Fadi, and I'm learning web development. This is my first website!</p>
         </section>
 
-        <section id="interests">
-            <h2>My Interests</h2>
-            <ul>
-                <li>Web Development</li>
-                <li>Technology</li>
-                <li>Your Interest 3</li>
-            </ul>
+        <section id="gallery">
+            <h2>My Gallery</h2>
+            <div class="image-gallery">
+                <img src="https://via.placeholder.com/300x200?text=Image+1" alt="Placeholder 1">
+                <img src="https://via.placeholder.com/300x200?text=Image+2" alt="Placeholder 2">
+                <img src="https://via.placeholder.com/300x200?text=Image+3" alt="Placeholder 3">
+                <img src="https://via.placeholder.com/300x200?text=Image+4" alt="Placeholder 4">
+            </div>
         </section>
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <p>You can reach me at: @erawaebonX
-            </p>
+            <p>You can reach me at: @erawaeb</p>
         </section>
     </main>
 
