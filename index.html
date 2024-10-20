@@ -86,12 +86,12 @@
                     <div class="project-card" data-project="finance-calculator">
                         <h3 class="text-2xl font-bold mb-4">The Infinite Improbability Finance Calculator</h3>
                         <p>A tool that calculates financial probabilities across multiple universes.</p>
-                        <button class="project-details-btn mt-4">Learn More</button>
+                        <button onclick="calculateFinance()" class="project-details-btn mt-4">Calculate</button>
                     </div>
                     <div class="project-card" data-project="babel-fish">
                         <h3 class="text-2xl font-bold mb-4">Babel Fish Translator</h3>
                         <p>An AI-powered language model inspired by the legendary Babel Fish.</p>
-                        <button class="project-details-btn mt-4">Learn More</button>
+                        <button onclick="translateText()" class="project-details-btn mt-4">Translate</button>
                     </div>
                 </div>
             </div>
@@ -130,27 +130,17 @@
     <!-- Chatbot -->
     <div id="chatbot" class="fixed bottom-4 right-4 w-96 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         <div class="bg-gray-700 p-4 flex justify-between items-center">
-            <h3 class="text-white font-bold">AI Assistant</h3>
+            <h3 class="text-white font-bold">Hitchhiker's Guide AI</h3>
             <button id="toggle-chatbot" class="text-white">⬆️</button>
         </div>
         <div id="chat-messages" class="h-80 overflow-y-auto p-4"></div>
         <div class="p-4">
-            <input type="text" id="user-input" class="w-full p-2 rounded" placeholder="Ask me anything...">
+            <input type="text" id="user-input" class="w-full p-2 rounded text-black" placeholder="Ask me anything...">
         </div>
     </div>
 
     <script src="babel-fish.js"></script>
-<script src="finance-calculator.js"></script>
+    <script src="finance-calculator.js"></script>
     <script src="script.js"></script>
-    <div id="chatbot" class="fixed bottom-4 right-4 w-96 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="bg-gray-700 p-4 flex justify-between items-center">
-            <h3 class="text-white font-bold">AI Assistant</h3>
-            <button id="toggle-chatbot" class="text-white">⬆️</button>
-        </div>
-        <div id="chat-messages" class="h-80 overflow-y-auto p-4"></div>
-        <div class="p-4">
-            <input type="text" id="user-input" class="w-full p-2 rounded" placeholder="Ask me anything...">
-        </div>
-    </div>
 </body>
 </html>
