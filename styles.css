@@ -71,7 +71,7 @@ body {
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
-.journey-entry, .project-card, .link-card {
+.journey-entry, .project-card {
     background: rgba(255, 215, 0, 0.1);
     border: 1px solid rgba(255, 215, 0, 0.2);
     border-radius: 10px;
@@ -79,15 +79,9 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.journey-entry:hover, .project-card:hover, .link-card:hover {
+.journey-entry:hover, .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-}
-
-.link-card {
-    display: block;
-    color: #ffffff;
-    text-decoration: none;
 }
 
 #dont-panic {
@@ -114,4 +108,71 @@ body {
     0% { opacity: 0; }
     50% { opacity: 1; }
     100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+section.fade-in {
+    opacity: 1;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.project-card {
+    cursor: pointer;
+}
+
+.project-details-btn {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-details-btn:hover {
+    background-color: #357ABD;
+}
+
+#project-modal {
+    transition: opacity 0.3s ease;
+}
+
+#project-modal.flex {
+    opacity: 1;
+}
+
+#chatbot {
+    transition: transform 0.3s ease;
+}
+
+#chatbot.hidden {
+    transform: translateY(calc(100% - 50px));
+}
+
+#chat-messages {
+    scrollbar-width: thin;
+    scrollbar-color: #4A5568 #2D3748;
+}
+
+#chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+    background: #2D3748;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background-color: #4A5568;
+    border-radius: 4px;
 }
