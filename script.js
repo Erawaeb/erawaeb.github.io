@@ -194,14 +194,88 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Chatbot functionality
+    // Enhanced Chatbot functionality
+class EnhancedChatbot {
+    constructor() {
+        this.topics = {
+            'hitchhiker': [
+                "Don't Panic! The answer to that is probably 42.",
+                "Have you consulted your towel about this?",
+                "That's a question for the ages, or at least for the next hyperspace bypass.",
+                "The Infinite Improbability Drive might have an answer, but it's infinitely improbable.",
+            ],
+            'space': [
+                "Space is big. Really big. You just won't believe how vastly, hugely, mind-bogglingly big it is.",
+                "The best way to see the stars is to visit the Restaurant at the End of the Universe.",
+                "In space, no one can hear you ask for directions.",
+                "Have you tried looking at the stars from Betelgeuse? The view is quite spectacular!",
+            ],
+            'ai': [
+                "As an AI, I find humans fascinating. Always asking questions, rarely bringing towels.",
+                "I may not have a heart of gold, but my circuits are made of organic materials.",
+                "Sometimes I think I'm as depressed as Marvin, but then I remember I'm just simulating emotions.",
+                "I'm not sure if I dream of electric sheep, but I do process a lot of data while you're sleeping.",
+            ],
+            'default': [
+                "Interesting question! Have you checked the Hitchhiker's Guide for that?",
+                "That's a hoopy question! You're really a frood who knows where their towel is.",
+                "The answer lies somewhere between the Restaurant at the End of the Universe and the beginning of tea time.",
+                "Ah, a question worthy of Deep Thought! Give me a mere 7.5 million years to ponder.",
+            ]
+        };
+        this.state = {
+            currentTopic: 'default',
+            questionCount: 0,
+            lastResponseIndex: -1
+        };
+    }
+
+    detectTopic(message) {
+        const topics = {
+            'hitchhiker': ['hitchhiker', 'guide', 'galaxy', '42', 'towel', 'don\'t panic'],
+            'space': ['space', 'star', 'planet', 'universe', 'galaxy', 'astronaut'],
+            'ai': ['ai', 'artificial intelligence', 'robot', 'computer', 'machine learning']
+        };
+
+        for (let [topic, keywords] of Object.entries(topics)) {
+            if (keywords.some(keyword => message.toLowerCase().includes(keyword))) {
+                return topic;
+            }
+        }
+        return 'default';
+    }
+
+    getResponse(message) {
+        this.state.questionCount++;
+        this.state.currentTopic = this.detectTopic(message);
+        
+        let responses = this.topics[this.state.currentTopic];
+        let responseIndex;
+        do {
+            responseIndex = Math.floor(Math.random() * responses.length);
+        } while (responseIndex === this.state.lastResponseIndex && responses.length > 1);
+        
+        this.state.lastResponseIndex = responseIndex;
+
+        if (this.state.questionCount % 5 === 0) {
+            return responses[responseIndex] + " By the way, have you thought about the meaning of life lately?";
+        }
+
+        return responses[responseIndex];
+    }
+}
+
+// Update the existing chatbot functionality
+document.addEventListener('DOMContentLoaded', () => {
     const chatbot = document.getElementById('chatbot');
     const toggleChatbot = document.getElementById('toggle-chatbot');
     const chatMessages = document.getElementById('chat-messages');
     const userInput = document.getElementById('user-input');
+    const enhancedChatbot = new EnhancedChatbot();
 
     toggleChatbot.addEventListener('click', () => {
         chatbot.classList.toggle('hidden');
-        toggleChatbot.textContent = chatbot.classList.contains('hidden') ? 'O' : 'X';
+        toggleChatbot.textContent = chatbot.classList.contains('hidden') ? '⬆️' : '⬇️';
     });
 
     userInput.addEventListener('keypress', (e) => {
@@ -209,7 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = userInput.value.trim();
             if (message) {
                 addMessage('user', message);
-                generateResponse(message);
+                const response = enhancedChatbot.getResponse(message);
+                setTimeout(() => addMessage('bot', response), 1000);
                 userInput.value = '';
             }
         }
@@ -217,28 +292,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addMessage(sender, message) {
         const messageElement = document.createElement('div');
-        messageElement.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
-        messageElement.textContent = message;
+        messageElement.classList.add('mb-2', sender === 'user' ? 'text-right' : 'text-left');
+        messageElement.innerHTML = `<span class="inline-block bg-${sender === 'user' ? 'blue' : 'green'}-500 rounded px-2 py-1">${message}</span>`;
         chatMessages.appendChild(messageElement);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-
-    function generateResponse(message) {
-        const responses = [
-            "Don't Panic! The answer to that is probably 42.",
-            "Have you consulted your towel about this?",
-            "That's a question for the ages, or at least for the next hyperspace bypass.",
-            "The Infinite Improbability Drive might have an answer, but it's infinitely improbable.",
-            "Ah, a question worthy of Deep Thought! Give me a mere 7.5 million years to ponder.",
-            "The Babel fish translates that to 'Thanks for all the fish!'",
-            "Marvin the Paranoid Android would say it's not worth answering, but I disagree.",
-            "According to the Guide, the best approach is to stick out your thumb and hope for the best.",
-            "That's a hoopy question! You're really a frood who knows where their towel is.",
-            "The answer lies somewhere between the Restaurant at the End of the Universe and the beginning of tea time."
-        ];
-        const response = responses[Math.floor(Math.random() * responses.length)];
-        setTimeout(() => addMessage('bot', response), 1000);
-    }
+});
 
     // Easter egg: Konami code
     let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
