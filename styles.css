@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap');
 
 body {
     font-family: 'Space Mono', monospace;
@@ -95,21 +95,6 @@ body {
     100% { transform: translateY(0px); }
 }
 
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    animation: twinkle linear infinite;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -175,4 +160,41 @@ section.fade-in {
 #chat-messages::-webkit-scrollbar-thumb {
     background-color: #4A5568;
     border-radius: 4px;
+}
+
+#title {
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.journey-entry {
+    position: relative;
+    overflow: hidden;
+}
+
+.journey-entry::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg at 50% 50%, #FFD700 0deg, transparent 60deg, transparent 300deg, #FFD700 360deg);
+    animation: rotate 20s linear infinite;
+    opacity: 0.1;
+}
+
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rainbow-background {
+    0% { background-color: red; }
+    14% { background-color: orange; }
+    28% { background-color: yellow; }
+    42% { background-color: green; }
+    56% { background-color: blue; }
+    70% { background-color: indigo; }
+    84% { background-color: violet; }
+    100% { background-color: red; }
 }
