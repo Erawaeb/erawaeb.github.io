@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     const starGeometry = new THREE.BufferGeometry();
-    const starMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF });
+    const starMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 0.1 });
 
     const starVertices = [];
     for (let i = 0; i < 10000; i++) {
@@ -28,6 +28,39 @@ document.addEventListener('DOMContentLoaded', () => {
         renderer.render(scene, camera);
     }
     animateStars();
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Tab switching functionality
+    const tabLinks = document.querySelectorAll('.nav-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    function switchTab(tabId) {
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+        });
+        tabLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        document.getElementById(tabId).classList.add('active');
+        document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+    }
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tabId = link.getAttribute('data-tab');
+            switchTab(tabId);
+        });
+    });
+
+    // Set the first tab as active by default
+    switchTab('home');
 
     // Don't Panic button
     const dontPanicBtn = document.getElementById('dont-panic');
@@ -63,33 +96,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
+                targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
-
-                targetElement.style.transition = 'transform 0.5s ease-out';
-                targetElement.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    targetElement.style.transform = 'scale(1)';
-                }, 500);
             }
         });
     });
 
-    // Animate sections on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-            } else {
-                entry.target.classList.remove('fade-in');
-            }
-        });
-    }, { threshold: 0.1 });
+    // Journey Log
+    const journeyEntries = [
+        { title: "First Steps into the AI Galaxy", content: "The beginning of our cosmic journey, where human meets AI and the adventure unfolds." },
+        { title: "Navigating the Code Nebula", content: "Exploring the mysteries of HTML, CSS, JavaScript, and Three.js with an AI co-pilot." },
+        { title: "The Financial Frontier", content: "Venturing into the world of finance and investment, guided by artificial intelligence and infinite improbability." },
+        { title: "Babel Fish Breakthrough", content: "Achieving interstellar communication with our AI-powered translation tool." },
+        { title: "Hitchhiker's Guide Web Launch", content: "Our cosmic collaboration goes live, ready to guide travelers through the AI universe." }
+    ];
 
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
+    const journeyContainer = document.getElementById('journey-entries');
+    journeyEntries.forEach((entry, index) => {
+        const entryElement = document.createElement('div');
+        entryElement.classList.add('journey-entry');
+        entryElement.innerHTML = `
+            <h3 class="entry-title">${entry.title}</h3>
+            <p class="entry-content">${entry.content}</p>
+        `;
+        entryElement.style.animationDelay = `${index * 0.2}s`;
+        journeyContainer.appendChild(entryElement);
     });
 
     // Project modal functionality
@@ -117,19 +149,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const project = card.dataset.project;
+    document.querySelectorAll('.project-details-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const project = btn.closest('.project-card').dataset.project;
             const details = projectDetails[project];
             modalTitle.textContent = details.title;
             modalDescription.textContent = details.description;
             modalExtra.textContent = details.extra;
-            projectModal.classList.remove('hidden');
-            projectModal.classList.add('flex');
+            projectModal.style.display = 'flex';
 
             if (project === 'finance-calculator') {
                 const calculator = new InfiniteImprobabilityCalculator();
-                modalExtra.innerHTML += `<br><br><button id="calculate-investment" class="project-details-btn">Calculate Investment</button>`;
+                modalExtra.innerHTML += `<br><br><button id="calculate-investment" class="cta-button">Calculate Investment</button>`;
                 document.getElementById('calculate-investment').addEventListener('click', () => {
                     const principal = prompt("Enter initial investment:");
                     const years = prompt("Enter number of years:");
@@ -140,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             } else if (project === 'babel-fish') {
                 const translator = new BabelFishTranslator();
-                modalExtra.innerHTML += `<br><br><button id="translate-text" class="project-details-btn">Translate Text</button>`;
+                modalExtra.innerHTML += `<br><br><button id="translate-text" class="cta-button">Translate Text</button>`;
                 document.getElementById('translate-text').addEventListener('click', () => {
                     const text = prompt("Enter text to translate:");
                     if (text) {
@@ -153,14 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closeModal.addEventListener('click', () => {
-        projectModal.classList.add('hidden');
-        projectModal.classList.remove('flex');
+        projectModal.style.display = 'none';
     });
 
-    projectModal.addEventListener('click', (e) => {
+    window.addEventListener('click', (e) => {
         if (e.target === projectModal) {
-            projectModal.classList.add('hidden');
-            projectModal.classList.remove('flex');
+            projectModal.style.display = 'none';
         }
     });
 
@@ -172,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggleChatbot.addEventListener('click', () => {
         chatbot.classList.toggle('hidden');
-        toggleChatbot.textContent = chatbot.classList.contains('hidden') ? '⬆️' : '⬇️';
+        toggleChatbot.textContent = chatbot.classList.contains('hidden') ? 'O' : 'X';
     });
 
     userInput.addEventListener('keypress', (e) => {
@@ -188,8 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addMessage(sender, message) {
         const messageElement = document.createElement('div');
-        messageElement.classList.add('mb-2', sender === 'user' ? 'text-right' : 'text-left');
-        messageElement.innerHTML = `<span class="inline-block bg-${sender === 'user' ? 'blue' : 'green'}-500 rounded px-2 py-1">${message}</span>`;
+        messageElement.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
+        messageElement.textContent = message;
         chatMessages.appendChild(messageElement);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
@@ -211,27 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => addMessage('bot', response), 1000);
     }
 
-    // Journey Log
-    const journeyEntries = [
-        { title: "First Steps into the AI Galaxy", content: "The beginning of our cosmic journey, where human meets AI and the adventure unfolds." },
-        { title: "Navigating the Code Nebula", content: "Exploring the mysteries of HTML, CSS, JavaScript, and Three.js with an AI co-pilot." },
-        { title: "The Financial Frontier", content: "Venturing into the world of finance and investment, guided by artificial intelligence and infinite improbability." },
-        { title: "Babel Fish Breakthrough", content: "Achieving interstellar communication with our AI-powered translation tool." },
-        { title: "Hitchhiker's Guide Web Launch", content: "Our cosmic collaboration goes live, ready to guide travelers through the AI universe." }
-    ];
-
-    const journeyContainer = document.getElementById('journey-entries');
-    journeyEntries.forEach((entry, index) => {
-        const entryElement = document.createElement('div');
-        entryElement.classList.add('journey-entry');
-        entryElement.innerHTML = `
-            <h3 class="text-2xl font-bold mb-4">${entry.title}</h3>
-            <p>${entry.content}</p>
-        `;
-        entryElement.style.animationDelay = `${index * 0.2}s`;
-        journeyContainer.appendChild(entryElement);
-    });
-
     // Easter egg: Konami code
     let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let konamiIndex = 0;
@@ -241,7 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
             konamiIndex++;
             if (konamiIndex === konamiCode.length) {
                 alert("Cheat code activated! You've unlocked the secret to the Universe, but it's 42.");
-                document.body.style.animation = 'rainbow-background 5s linear infinite';
+                document.body.classList.add('rainbow-activated');
+                setTimeout(() => document.body.classList.remove('rainbow-activated'), 5000);
                 konamiIndex = 0;
             }
         } else {
