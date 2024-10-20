@@ -4,77 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Hitchhiker's Guide to Artificial Intelligence</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
-<body class="bg-black text-white overflow-x-hidden">
-    <div id="stars-background"></div>
-    
-    <header class="fixed top-0 left-0 w-full z-50 bg-opacity-50 bg-black backdrop-filter backdrop-blur-md">
-        <nav class="container mx-auto px-6 py-3">
-            <ul class="flex justify-center space-x-8">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#journey-log" class="nav-link">Journey Log</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body>
+    <canvas id="stars-background"></canvas>
 
-    <main>
-        <section id="home" class="h-screen flex items-center justify-center relative">
+    <nav class="fixed top-0 left-0 w-full z-50 bg-opacity-50 bg-black backdrop-filter backdrop-blur-md">
+        <ul class="flex justify-center space-x-6 py-4">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#journey-log" class="nav-link">Journey Log</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main role="main">
+        <section id="home" class="section h-screen flex items-center justify-center relative">
             <div class="text-center">
-                <h1 class="text-6xl font-bold mb-4 gradient-text">The Hitchhiker's Guide to Artificial Intelligence</h1>
+                <h1 id="title" class="text-6xl font-bold mb-4 gradient-text">The Hitchhiker's Guide to Artificial Intelligence</h1>
                 <p class="text-xl mb-8">Don't Panic and Bring Your Towel</p>
                 <a href="#about" class="cta-button">Explore the Galaxy</a>
             </div>
-            <div id="dont-panic" class="absolute top-10 right-10 bg-yellow-400 text-black px-4 py-2 rounded-full cursor-pointer hover:bg-yellow-300 transition-colors duration-300">DON'T PANIC</div>
+            <div id="dont-panic" class="absolute top-10 right-10 bg-yellow-400 text-black px-4 py-2 rounded-full cursor-pointer hover:bg-yellow-300 transition-colors duration-300">
+                DON'T PANIC
+            </div>
         </section>
 
-        <section id="about" class="min-h-screen flex items-center justify-center py-20">
+        <section id="about" class="section min-h-screen flex items-center justify-center py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-8 gradient-text">About This Cosmic Journey</h2>
-                <p class="text-xl mb-8 max-w-3xl mx-auto">
-                    Welcome, fellow traveler, to a groundbreaking expedition through the vast universe of Artificial Intelligence. 
-                    This website is the product of an extraordinary collaboration between a human explorer and Claude, an AI assistant. 
-                    Together, we're charting unknown territories in the realm of technology and finance, armed with nothing but curiosity and a reliable towel.
-                </p>
+                <p class="text-xl mb-8">Welcome, fellow traveler, to a groundbreaking expedition through the vast universe of Artificial Intelligence. This website is the product of an extraordinary collaboration between a human explorer and Claude, an AI assistant. Together, we're charting unknown territories in the realm of technology and finance, armed with nothing but curiosity and a reliable towel.</p>
                 <div class="bg-blue-900 bg-opacity-50 p-6 rounded-lg mb-8">
                     <h3 class="text-2xl font-bold mb-4">A Note on Our Cosmic Collaboration</h3>
-                    <p class="text-lg">
-                        This entire website was crafted through the combined efforts of Claude, an AI language model, and a human with no prior coding experience. 
-                        It stands as a testament to the potential of AI-assisted learning and creation. Every line of code, every design decision, 
-                        and every word you read is the result of our unique partnership.
-                    </p>
+                    <p>This entire website was crafted through the combined efforts of Claude, an AI language model, and a human with no prior coding experience. It stands as a testament to the potential of AI-assisted learning and creation. Every line of code, every design decision, and every word you read is the result of our unique partnership.</p>
                 </div>
-                <a href="https://x.com/erawaeb" target="_blank" rel="noopener noreferrer" class="cta-button inline-block">Follow the Saga on X</a>
+                <a href="https://x.com/erawaeb" class="cta-button inline-block" target="_blank" rel="noopener noreferrer">Follow the Saga on X</a>
             </div>
         </section>
 
-        <section id="journey-log" class="min-h-screen py-20 bg-opacity-50 bg-gray-900">
+        <section id="journey-log" class="section min-h-screen py-20 bg-opacity-50 bg-gray-900">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-12 gradient-text text-center">Journey Log</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="journey-entry">
-                        <h3 class="text-2xl font-bold mb-4">First Steps into the AI Galaxy</h3>
-                        <p>The beginning of our cosmic journey, where human meets AI and the adventure unfolds.</p>
-                    </div>
-                    <div class="journey-entry">
-                        <h3 class="text-2xl font-bold mb-4">Navigating the Code Nebula</h3>
-                        <p>Exploring the mysteries of HTML, CSS, and JavaScript with an AI co-pilot.</p>
-                    </div>
-                    <div class="journey-entry">
-                        <h3 class="text-2xl font-bold mb-4">The Financial Frontier</h3>
-                        <p>Venturing into the world of finance and investment, guided by artificial intelligence.</p>
-                    </div>
+                <div id="journey-entries" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Journey entries will be dynamically added here -->
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="min-h-screen py-20 bg-opacity-50 bg-gray-900">
+        <section id="projects" class="section min-h-screen py-20 bg-opacity-50 bg-gray-900">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-12 gradient-text text-center">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -86,48 +66,39 @@
                     <div class="project-card" data-project="finance-calculator">
                         <h3 class="text-2xl font-bold mb-4">The Infinite Improbability Finance Calculator</h3>
                         <p>A tool that calculates financial probabilities across multiple universes.</p>
-                        <button onclick="calculateFinance()" class="project-details-btn mt-4">Calculate</button>
+                        <button class="project-details-btn mt-4">Calculate</button>
                     </div>
                     <div class="project-card" data-project="babel-fish">
                         <h3 class="text-2xl font-bold mb-4">Babel Fish Translator</h3>
                         <p>An AI-powered language model inspired by the legendary Babel Fish.</p>
-                        <button onclick="translateText()" class="project-details-btn mt-4">Translate</button>
+                        <button class="project-details-btn mt-4">Translate</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="min-h-screen flex items-center justify-center py-20">
+        <section id="contact" class="section min-h-screen flex items-center justify-center py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold mb-8 gradient-text">Contact the Intergalactic Team</h2>
-                <p class="text-xl mb-8 max-w-3xl mx-auto">
-                    Whether you're a fellow hitchhiker, a curious earthling, or an advanced AI, we'd love to hear from you. 
-                    Share your thoughts, ideas, or just say "Don't Panic!"
-                </p>
-                <a href="https://x.com/erawaeb" target="_blank" rel="noopener noreferrer" class="cta-button inline-block">Reach Out on X</a>
+                <p class="text-xl mb-8">Whether you're a fellow hitchhiker, a curious earthling, or an advanced AI, we'd love to hear from you. Share your thoughts, ideas, or just say "Don't Panic!"</p>
+                <a href="https://x.com/erawaeb" class="cta-button inline-block" target="_blank" rel="noopener noreferrer">Reach Out on X</a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-opacity-50 bg-black backdrop-filter backdrop-blur-md py-6">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 The Hitchhiker's Guide to Artificial Intelligence. All rights reserved across the galaxy.</p>
-        </div>
+    <footer class="container mx-auto px-6 text-center py-8">
+        <p>© 2024 The Hitchhiker's Guide to Artificial Intelligence. All rights reserved across the galaxy.</p>
     </footer>
 
-    <!-- Project Details Modal -->
     <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
         <div class="bg-gray-800 p-8 rounded-lg max-w-2xl w-full">
             <h2 id="modal-title" class="text-3xl font-bold mb-4"></h2>
             <p id="modal-description" class="mb-4"></p>
             <div id="modal-extra" class="mb-4"></div>
-            <button id="close-modal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Close
-            </button>
+            <button id="close-modal" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Close</button>
         </div>
     </div>
 
-    <!-- Chatbot -->
     <div id="chatbot" class="fixed bottom-4 right-4 w-96 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         <div class="bg-gray-700 p-4 flex justify-between items-center">
             <h3 class="text-white font-bold">Hitchhiker's Guide AI</h3>
@@ -135,12 +106,12 @@
         </div>
         <div id="chat-messages" class="h-80 overflow-y-auto p-4"></div>
         <div class="p-4">
-            <input type="text" id="user-input" class="w-full p-2 rounded text-black" placeholder="Ask me anything...">
+            <input id="user-input" type="text" placeholder="Ask a question..." class="w-full px-3 py-2 bg-gray-700 text-white rounded">
         </div>
     </div>
 
+    <script src="script.js"></script>
     <script src="babel-fish.js"></script>
     <script src="finance-calculator.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
