@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Hitchhiker's Guide to Artificial Intelligence</title>
+    <meta name="description" content="Explore the universe of AI with our cosmic guide. Don't panic, bring your towel, and discover the wonders of artificial intelligence!">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -12,103 +13,211 @@
     <canvas id="stars-background"></canvas>
 
     <header>
-        <nav class="fixed top-0 left-0 w-full z-50 bg-opacity-50 bg-black backdrop-filter backdrop-blur-md">
-            <ul class="flex justify-center space-x-6 py-4">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#journey-log" class="nav-link">Journey Log</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+        <nav id="main-nav" class="fixed-nav">
+            <ul>
+                <li><a href="#home" class="nav-link" data-tab="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-tab="about">About</a></li>
+                <li><a href="#journey-log" class="nav-link" data-tab="journey-log">Journey Log</a></li>
+                <li><a href="#projects" class="nav-link" data-tab="projects">Projects</a></li>
+                <li><a href="#ai-concepts" class="nav-link" data-tab="ai-concepts">AI Concepts</a></li>
+                <li><a href="#contact" class="nav-link" data-tab="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="section h-screen flex items-center justify-center relative">
-            <div class="text-center">
-                <h1 id="title" class="text-6xl font-bold mb-4 gradient-text">The Hitchhiker's Guide to Artificial Intelligence</h1>
-                <p class="text-xl mb-8">Don't Panic and Bring Your Towel</p>
-                <a href="#about" class="cta-button">Explore the Galaxy</a>
-            </div>
-            <div id="dont-panic" class="absolute top-10 right-10 bg-yellow-400 text-black px-4 py-2 rounded-full cursor-pointer hover:bg-yellow-300 transition-colors duration-300">
-                DON'T PANIC
+    <main id="content-area">
+        <section id="home" class="tab-content active">
+            <div class="container">
+                <h1 id="title" class="gradient-text">The Hitchhiker's Guide to Artificial Intelligence</h1>
+                <p class="subtitle">Don't Panic and Bring Your Towel</p>
+                <div class="cta-container">
+                    <a href="#about" class="cta-button">Explore the Galaxy</a>
+                    <a href="#projects" class="cta-button secondary">View Our Projects</a>
+                </div>
+                <div id="dont-panic" class="panic-button">DON'T PANIC</div>
             </div>
         </section>
 
-        <section id="about" class="section min-h-screen flex items-center justify-center py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold mb-8 gradient-text">About This Cosmic Journey</h2>
-                <p class="text-xl mb-8">Welcome, fellow traveler, to a groundbreaking expedition through the vast universe of Artificial Intelligence. This website is the product of an extraordinary collaboration between a human explorer and Claude, an AI assistant. Together, we're charting unknown territories in the realm of technology and finance, armed with nothing but curiosity and a reliable towel.</p>
-                <div class="bg-blue-900 bg-opacity-50 p-6 rounded-lg mb-8">
-                    <h3 class="text-2xl font-bold mb-4">A Note on Our Cosmic Collaboration</h3>
+        <section id="about" class="tab-content">
+            <div class="container">
+                <h2 class="gradient-text">About This Cosmic Journey</h2>
+                <p>Welcome, fellow traveler, to a groundbreaking expedition through the vast universe of Artificial Intelligence. This website is the product of an extraordinary collaboration between a human explorer and Claude, an AI assistant. Together, we're charting unknown territories in the realm of technology and finance, armed with nothing but curiosity and a reliable towel.</p>
+                <div class="note-box">
+                    <h3>A Note on Our Cosmic Collaboration</h3>
                     <p>This entire website was crafted through the combined efforts of Claude, an AI language model, and a human with no prior coding experience. It stands as a testament to the potential of AI-assisted learning and creation. Every line of code, every design decision, and every word you read is the result of our unique partnership.</p>
                 </div>
-                <a href="https://x.com/erawaeb" class="cta-button inline-block" target="_blank" rel="noopener noreferrer">Follow the Saga on X</a>
+                <div class="team-section">
+                    <h3>Meet the Intergalactic Team</h3>
+                    <div class="team-members">
+                        <div class="team-member">
+                            <img src="path/to/human-avatar.jpg" alt="Human Explorer" class="avatar">
+                            <h4>Human Explorer</h4>
+                            <p>A curious earthling venturing into the AI cosmos.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="path/to/ai-avatar.jpg" alt="Claude the AI" class="avatar">
+                            <h4>Claude the AI</h4>
+                            <p>An advanced AI assistant, guiding the journey through the digital universe.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://x.com/erawaeb" class="cta-button" target="_blank" rel="noopener noreferrer">Follow the Saga on X</a>
             </div>
         </section>
 
-        <section id="journey-log" class="section min-h-screen py-20 bg-opacity-50 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold mb-12 gradient-text text-center">Journey Log</h2>
-                <div id="journey-entries" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="journey-log" class="tab-content">
+            <div class="container">
+                <h2 class="gradient-text">Journey Log</h2>
+                <p>Embark on our cosmic adventure through the AI galaxy. Each entry in our journey log represents a milestone in our exploration of artificial intelligence and web development.</p>
+                <div id="journey-entries" class="grid">
                     <!-- Journey entries will be dynamically added here -->
                 </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section min-h-screen py-20 bg-opacity-50 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold mb-12 gradient-text text-center">Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="project-card" data-project="cosmic-website">
-                        <h3 class="text-2xl font-bold mb-4">This Cosmic Website</h3>
-                        <p>A journey through space, time, and code, created by human and AI working in harmony.</p>
-                        <button class="project-details-btn mt-4">Learn More</button>
+                <div class="journey-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Day 1: Launch</h3>
+                            <p>Our expedition begins with the first line of code.</p>
+                        </div>
                     </div>
-                    <div class="project-card" data-project="finance-calculator">
-                        <h3 class="text-2xl font-bold mb-4">The Infinite Improbability Finance Calculator</h3>
-                        <p>A tool that calculates financial probabilities across multiple universes.</p>
-                        <button class="project-details-btn mt-4">Calculate</button>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Week 2: First Contact</h3>
+                            <p>Establishing communication between human and AI.</p>
+                        </div>
                     </div>
-                    <div class="project-card" data-project="babel-fish">
-                        <h3 class="text-2xl font-bold mb-4">Babel Fish Translator</h3>
-                        <p>An AI-powered language model inspired by the legendary Babel Fish.</p>
-                        <button class="project-details-btn mt-4">Translate</button>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Month 1: Nebula Navigation</h3>
+                            <p>Traversing the complexities of web development.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section min-h-screen flex items-center justify-center py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-8 gradient-text">Contact the Intergalactic Team</h2>
-                <p class="text-xl mb-8">Whether you're a fellow hitchhiker, a curious earthling, or an advanced AI, we'd love to hear from you. Share your thoughts, ideas, or just say "Don't Panic!"</p>
-                <a href="https://x.com/erawaeb" class="cta-button inline-block" target="_blank" rel="noopener noreferrer">Reach Out on X</a>
+        <section id="projects" class="tab-content">
+            <div class="container">
+                <h2 class="gradient-text">Projects</h2>
+                <p>Discover the fruits of our cosmic collaboration. Each project represents a unique blend of human creativity and AI capabilities.</p>
+                <div class="grid">
+                    <div class="project-card" data-project="cosmic-website">
+                        <h3>This Cosmic Website</h3>
+                        <p>A journey through space, time, and code, created by human and AI working in harmony.</p>
+                        <ul class="project-features">
+                            <li>Interactive star background</li>
+                            <li>Dynamic content loading</li>
+                            <li>Responsive design for all devices</li>
+                        </ul>
+                        <button class="cta-button project-details-btn">Learn More</button>
+                    </div>
+                    <div class="project-card" data-project="finance-calculator">
+                        <h3>The Infinite Improbability Finance Calculator</h3>
+                        <p>A tool that calculates financial probabilities across multiple universes.</p>
+                        <ul class="project-features">
+                            <li>Multi-universe investment returns</li>
+                            <li>Quantum stock predictions</li>
+                            <li>Time-dilated compound interest</li>
+                        </ul>
+                        <button class="cta-button project-details-btn">Calculate</button>
+                    </div>
+                    <div class="project-card" data-project="babel-fish">
+                        <h3>Babel Fish Translator</h3>
+                        <p>An AI-powered language model inspired by the legendary Babel Fish.</p>
+                        <ul class="project-features">
+                            <li>Instant translation between Earth languages</li>
+                            <li>Experimental alien dialect support</li>
+                            <li>Context-aware idiom translation</li>
+                        </ul>
+                        <button class="cta-button project-details-btn">Translate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-concepts" class="tab-content">
+            <div class="container">
+                <h2 class="gradient-text">AI Concepts Explained</h2>
+                <p>Demystifying the complex world of artificial intelligence, one concept at a time.</p>
+                <div class="concept-list">
+                    <div class="concept-item">
+                        <h3>Machine Learning</h3>
+                        <p>The art of teaching computers to learn from data, without being explicitly programmed.</p>
+                    </div>
+                    <div class="concept-item">
+                        <h3>Neural Networks</h3>
+                        <p>Digital brain-like structures that process information in layers, inspired by biological neurons.</p>
+                    </div>
+                    <div class="concept-item">
+                        <h3>Natural Language Processing</h3>
+                        <p>Enabling computers to understand, interpret, and generate human language.</p>
+                    </div>
+                    <div class="concept-item">
+                        <h3>Computer Vision</h3>
+                        <p>Granting machines the ability to see and interpret visual information from the world.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="tab-content">
+            <div class="container">
+                <h2 class="gradient-text">Contact the Intergalactic Team</h2>
+                <p>Whether you're a fellow hitchhiker, a curious earthling, or an advanced AI, we'd love to hear from you. Share your thoughts, ideas, or just say "Don't Panic!"</p>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+                <div class="social-links">
+                    <a href="https://x.com/erawaeb" class="social-link" target="_blank" rel="noopener noreferrer">Follow on X</a>
+                    <a href="#" class="social-link">Join our Discord</a>
+                    <a href="#" class="social-link">Subscribe to Newsletter</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-8 text-center">
-        <p>© 2024 The Hitchhiker's Guide to Artificial Intelligence. All rights reserved across the galaxy.</p>
+    <footer>
+        <div class="container">
+            <p>© 2024 The Hitchhiker's Guide to Artificial Intelligence. All rights reserved across the galaxy.</p>
+            <nav class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#journey-log">Journey Log</a>
+                <a href="#projects">Projects</a>
+                <a href="#ai-concepts">AI Concepts</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </footer>
 
-    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
-        <div class="bg-gray-800 p-8 rounded-lg max-w-2xl w-full">
-            <h2 id="modal-title" class="text-3xl font-bold mb-4"></h2>
-            <p id="modal-description" class="mb-4"></p>
-            <div id="modal-extra" class="mb-4"></div>
-            <button id="close-modal" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Close</button>
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <div id="modal-extra"></div>
+            <button id="close-modal" class="cta-button">Close</button>
         </div>
     </div>
 
-    <div id="chatbot" class="fixed bottom-4 right-4 w-96 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="bg-gray-700 p-4 flex justify-between items-center">
-            <h3 class="text-white font-bold">Hitchhiker's Guide AI</h3>
-            <button id="toggle-chatbot" class="text-white">⬆️</button>
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">
+            <h3>Hitchhiker's Guide AI</h3>
+            <button id="toggle-chatbot">X</button>
         </div>
-        <div id="chat-messages" class="h-80 overflow-y-auto p-4"></div>
-        <div class="p-4">
-            <input id="user-input" type="text" placeholder="Ask a question..." class="w-full px-3 py-2 bg-gray-700 text-white rounded">
+        <div id="chat-messages"></div>
+        <div class="chatbot-input">
+            <input id="user-input" type="text" placeholder="Ask a question...">
         </div>
     </div>
 
