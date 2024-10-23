@@ -125,73 +125,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Project modal functionality
-    const projectModal = document.getElementById('project-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
-    const modalExtra = document.getElementById('modal-extra');
-    const closeModal = document.getElementById('close-modal');
+ // Add this to your script.js file, replacing the existing modal-related code
 
-    const projectDetails = {
-        'cosmic-website': {
-            title: 'This Cosmic Website',
-            description: 'A journey through space, time, and code, created by human and AI working in harmony.',
-            extra: 'Technologies used: HTML, CSS, JavaScript, Three.js, and a sprinkle of stardust.'
-        },
-        'finance-calculator': {
-            title: 'The Infinite Improbability Finance Calculator',
-            description: 'A tool that calculates financial probabilities across multiple universes.',
-            extra: 'Features: Multi-universe investment returns, stock price predictions, and more!'
-        },
-        'babel-fish': {
-            title: 'Babel Fish Translator',
-            description: 'An AI-powered language model inspired by the legendary Babel Fish.',
-            extra: 'Features: Real-time translation between English and Chinese, with more languages coming soon!'
-        }
-    };
+const projectModal = document.getElementById('project-modal');
+const modalContent = document.querySelector('#project-modal > div'); // Select the modal content div
+const closeModal = document.querySelector('#close-modal');
 
-    document.querySelectorAll('.project-details-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const project = btn.closest('.project-card').dataset.project;
-            const details = projectDetails[project];
-            modalTitle.textContent = details.title;
-            modalDescription.textContent = details.description;
-            modalExtra.textContent = details.extra;
-            projectModal.style.display = 'flex';
+// Prevent body scrolling when modal is open
+function toggleBodyScroll(shouldLock) {
+    document.body.style.overflow = shouldLock ? 'hidden' : '';
+}
 
-            if (project === 'finance-calculator') {
-                const calculator = new InfiniteImprobabilityCalculator();
-                modalExtra.innerHTML += `<br><br><button id="calculate-investment" class="cta-button">Calculate Investment</button>`;
-                document.getElementById('calculate-investment').addEventListener('click', () => {
-                    const principal = prompt("Enter initial investment:");
-                    const years = prompt("Enter number of years:");
-                    if (principal && years) {
-                        const result = calculator.calculateInvestmentReturn(Number(principal), Number(years));
-                        alert(`Your potential return: ${result.toFixed(2)}`);
-                    }
-                });
-            } else if (project === 'babel-fish') {
-                const translator = new BabelFishTranslator();
-                modalExtra.innerHTML += `<br><br><button id="translate-text" class="cta-button">Translate Text</button>`;
-                document.getElementById('translate-text').addEventListener('click', () => {
-                    const text = prompt("Enter text to translate:");
-                    if (text) {
-                        const translation = translator.translate(text, "English", "Chinese");
-                        alert(`Translation: ${translation}`);
-                    }
-                });
-            }
-        });
+// Open modal function
+function openModal(project) {
+    const details = projectDetails[project];
+    if (details) {
+        document.getElementById('modal-title').textContent = details.title;
+        document.getElementById('modal-description').textContent = details.description;
+        document.getElementById('modal-extra').textContent = details.extra;
+        projectModal.classList.remove('hidden');
+        projectModal.classList.add('flex');
+        toggleBodyScroll(true);
+    }
+}
+
+// Close modal function
+function closeModalFunc() {
+    projectModal.classList.add('hidden');
+    projectModal.classList.remove('flex');
+    toggleBodyScroll(false);
+}
+
+// Event listeners
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const project = card.getAttribute('project');
+        openModal(project);
     });
+});
 
-    closeModal.addEventListener('click', () => {
-        projectModal.style.display = 'none';
-    });
+closeModal.addEventListener('click', closeModalFunc);
 
-    window.addEventListener('click', (e) => {
-        if (e.target === projectModal) {
-            projectModal.style.display = 'none';
-        }
-    });
+// Close modal when clicking outside
+projectModal.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+        closeModalFunc();
+    }
+});
+
+// Add escape key handler
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
+        closeModalFunc();
+    }
+});
 
     // Chatbot functionality
     // Enhanced Chatbot functionality
