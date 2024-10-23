@@ -23,13 +23,13 @@ h1, h2, h3 {
 
 /* Background */
 #stars-background {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    position: fixed;
     z-index: -1;
+    overflow: hidden; /* Add this to prevent scrollbars */
 }
+
 
 /* Navigation */
 .fixed-nav {
@@ -379,3 +379,52 @@ footer {
     color: #FF69B4;
 }
 
+
+/* Add this around line 160-170 (at the end of styles.css) */
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    /* Navigation container */
+    .fixed-nav {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Navigation items */
+    .nav-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        margin: 0.25rem 0;
+    }
+
+    /* Container adjustments */
+    .container {
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
+
+    /* Project cards grid */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    /* Main title adjustment */
+    #the-hitchhikers-guide-to-artificial-intelligence {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .container {
+        padding: 0 2rem;
+    }
+}
