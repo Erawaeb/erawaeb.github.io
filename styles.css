@@ -20,6 +20,20 @@ h1, h2, h3 {
     font-family: 'Orbitron', sans-serif;
     color: #FFD700;
 }
+.gradient-text {
+    background: linear-gradient(45deg, #FFD700, #00CED1, #FF69B4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 5s ease infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 /* Background */
 #stars-background {
