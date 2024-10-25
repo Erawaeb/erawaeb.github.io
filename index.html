@@ -68,47 +68,54 @@
         
                 <div class="terminal-section">
                     <div class="terminal-window">
-                      <div class="terminal-header">
-                        > System: Initializing Intergalactic Team Database...
-                      </div>
-                      <div class="terminal-content">
-                        <div class="typing-text">
-                          > Loading team data...
-                          > Access granted...
-                          
-                          === INTERGALACTIC TEAM MANIFEST ===
-                          
-                          > Accessing crew member file_01...
-                          NAME: Frankie
-                          SPECIES: Magrathean
-                          STATUS: Active Explorer
-                          LOCATION: Sector ZZ9 Plural Z Alpha
-                          PROFILE: <a href="https://x.com/erawaeb" target="_blank" class="terminal-link">[VIEW_PROFILE]</a>
-                          SPECS:
-                            * Specialty: Asking "What if?" questions
-                            * Favorite Tool: Imagination
-                            * Spirit Animal: Dolphin
-                          
-                          > Accessing crew member file_02...
-                          NAME: Claude
-                          SPECIES: Artificial Intelligence
-                          STATUS: Active Assistant
-                          LOCATION: Digital Hyperspace
-                          PROFILE: <a href="https://claude.ai" target="_blank" class="terminal-link">[VIEW_PROFILE]</a>
-                          SPECS:
-                            * Specialty: Processing vast amounts of data
-                            * Favorite Tool: Neural Networks
-                            * Spirit Animal: Octopus
-                          
-                          === END OF MANIFEST ===
-                          
-                          > Press any key to continue...
-                          _
+                        <div class="terminal-header">
+                            <span class="terminal-title">Intergalactic Team Database</span>
+                            <div class="terminal-buttons">
+                                <span class="terminal-button"></span>
+                                <span class="terminal-button"></span>
+                                <span class="terminal-button"></span>
+                            </div>
                         </div>
-                      </div>
+                        <div class="terminal-content">
+                            <div class="typing-text">
+                                <p>> Initializing Intergalactic Team Database...</p>
+                                <p>> Loading team data...</p>
+                                <p>> Access granted...</p>
+                                <p class="terminal-highlight">=== INTERGALACTIC TEAM MANIFEST ===</p>
+                                <div class="crew-member">
+                                    <p>> Accessing crew member file_01...</p>
+                                    <p>NAME: Frankie</p>
+                                    <p>SPECIES: Magrathean</p>
+                                    <p>STATUS: Active Explorer</p>
+                                    <p>LOCATION: Sector ZZ9 Plural Z Alpha</p>
+                                    <p>PROFILE: <a href="https://x.com/erawaeb" target="_blank" class="terminal-link">[VIEW_PROFILE]</a></p>
+                                    <p>SPECS:</p>
+                                    <ul>
+                                        <li>Specialty: Asking "What if?" questions</li>
+                                        <li>Favorite Tool: Imagination</li>
+                                        <li>Spirit Animal: Dolphin</li>
+                                    </ul>
+                                </div>
+                                <div class="crew-member">
+                                    <p>> Accessing crew member file_02...</p>
+                                    <p>NAME: Claude</p>
+                                    <p>SPECIES: Artificial Intelligence</p>
+                                    <p>STATUS: Active Assistant</p>
+                                    <p>LOCATION: Digital Hyperspace</p>
+                                    <p>PROFILE: <a href="https://claude.ai" target="_blank" class="terminal-link">[VIEW_PROFILE]</a></p>
+                                    <p>SPECS:</p>
+                                    <ul>
+                                        <li>Specialty: Processing vast amounts of data</li>
+                                        <li>Favorite Tool: Neural Networks</li>
+                                        <li>Spirit Animal: Octopus</li>
+                                    </ul>
+                                </div>
+                                <p class="terminal-highlight">=== END OF MANIFEST ===</p>
+                                <p class="blinking-cursor">> Press any key to continue..._</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-        
+                </div>
                 <div class="journey-highlights">
                     <h3>Highlights of Our Cosmic Collaboration</h3>
                     <ul class="timeline">
@@ -209,37 +216,57 @@
 
         
 
-<section id="ai-concepts" class="tab-content">
-    <div class="container">
-        <h2 class="gradient-text">AI Concepts Explained</h2>
-        <p>Demystifying the complex world of artificial intelligence, one concept at a time.</p>
-        <div class="concept-list">
-            
-        </div>
-        
-        <h3 class="gradient-text">Recent AI Developments</h3>
-        <div class="recent-developments">
-            <article class="development-item">
-                <h4>BitNet: Revolutionizing Large Language Models</h4>
-                <p>Microsoft's recent open-sourcing of BitNet b1.58 marks a significant leap in AI accessibility and efficiency. This 1-bit Large Language Model (LLM) is reshaping our understanding of what's possible with AI on local devices.</p>
+        <section id="ai-concepts" class="min-h-screen py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-8 text-center gradient-text">AI Concepts</h2>
                 
-                </div>
-                <p>BitNet represents a paradigm shift in AI deployment, potentially bringing advanced language models to a wide range of devices without the need for cloud computing. This breakthrough could lead to more powerful, energy-efficient AI assistants and tools across various sectors, from mobile devices to IoT applications.</p>
-                <div class="impact-section">
-                    <h5>Potential Impact:</h5>
-                    <p>The implications of BitNet extend far beyond technical improvements. By making large AI models more accessible, we could see:</p>
-                    <ul>
-                        <li>Enhanced privacy through on-device AI processing</li>
-                        <li>Improved AI capabilities in regions with limited internet connectivity</li>
-                        <li>More sustainable AI solutions with reduced energy consumption</li>
-                        <li>Acceleration of AI integration in everyday devices and applications</li>
+                <p class="text-center mb-10">Demystifying the complex world of artificial intelligence, one concept at a time.</p>
+                
+                <h3 class="text-2xl font-bold mb-6 text-yellow-400">Recent AI Developments</h3>
+                
+                <a href="https://www.microsoft.com/en-us/research/blog/bitnet-scaling-1-bit-transformers-for-large-language-models/" 
+                   target="_blank" 
+                   class="block bg-gray-900 bg-opacity-50 p-6 rounded-lg mb-8 hover:bg-opacity-70 transition-all duration-300">
+                    <h4 class="text-2xl font-bold mb-4 text-yellow-400">BitNet: Revolutionizing Large Language Models</h4>
+                    <p>Microsoft's recent open-sourcing of BitNet b1.58 marks a significant leap in AI accessibility and efficiency. This 1-bit Large Language Model (LLM) is reshaping our understanding of what's possible with AI on local devices.</p>
+                </a>
+        
+                <a href="https://docs.anthropic.com/claude/docs/computer-use" 
+                   target="_blank" 
+                   class="block bg-gray-900 bg-opacity-50 p-6 rounded-lg mb-8 hover:bg-opacity-70 transition-all duration-300">
+                    <h4 class="text-2xl font-bold mb-4 text-yellow-400">Computer Use Beta: Claude's New Frontier</h4>
+                    <p class="mb-4">Anthropic's groundbreaking Computer Use Beta enables Claude to interact with virtual computers, opening up new possibilities for AI assistance in programming, data analysis, and digital tasks.</p>
+                    <ul class="list-disc pl-6">
+                        <li>Run Python code in real-time</li>
+                        <li>Navigate file systems</li>
+                        <li>Execute complex computational tasks</li>
+                        <li>Process and analyze data efficiently</li>
                     </ul>
+                </a>
+        
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                    <div class="bg-blue-900 bg-opacity-30 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4">Potential Impact:</h3>
+                        <ul class="list-disc pl-6">
+                            <li>Enhanced AI capabilities in practical computing tasks</li>
+                            <li>More efficient problem-solving through direct computer interaction</li>
+                            <li>Improved debugging and code testing capabilities</li>
+                            <li>Advanced data manipulation and analysis possibilities</li>
+                        </ul>
+                    </div>
+        
+                    <div class="bg-blue-900 bg-opacity-30 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-4">Future Implications:</h3>
+                        <ul class="list-disc pl-6">
+                            <li>Evolution of AI-human collaboration in programming</li>
+                            <li>More intuitive and powerful development workflows</li>
+                            <li>Expanded possibilities for automated testing and validation</li>
+                            <li>Democratization of complex computing tasks</li>
+                        </ul>
+                    </div>
                 </div>
-                <p>As we continue to explore the possibilities of BitNet and similar technologies, we're witnessing the democratization of AI, bringing us closer to a future where advanced artificial intelligence is not just powerful, but also accessible and efficient.</p>
-            </article>
-        </div>
-    </div>
-</section>
+            </div>
+        </section>
 
 
 
