@@ -3,200 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ERAWAEB — Be Aware</title>
-  <meta name="description" content="ERAWAEB — 'be aware,' spelled backwards. A nightly digest, a video channel, and field guides for people who pay attention." />
-  <meta property="og:title" content="ERAWAEB — Be Aware" />
-  <meta property="og:description" content="A nightly digest, a video channel, and field guides for people who pay attention. No noise. Just the signal." />
+  <title>Field Guides | ERAWAEB</title>
+  <meta name="description" content="ERAWAEB field guides: short, practical playbooks. Scam defense, know-your-rights traffic stops, and beating free-trial traps." />
+  <meta property="og:title" content="Field Guides — ERAWAEB" />
+  <meta property="og:description" content="Short, practical field guides for people who pay attention." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://erawaeb.com" />
+  <meta property="og:url" content="https://erawaeb.com/guides/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0B'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial,sans-serif' font-size='36' font-weight='900' fill='%23FFB224' text-anchor='middle'%3EB.%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
 
   <header class="nav" id="nav">
     <div class="container nav-inner">
-      <a href="#top" class="brand" aria-label="ERAWAEB — home">
+      <a href="../" class="brand" aria-label="ERAWAEB — home">
         <span class="flip" aria-hidden="true"><span class="fwd">ERAWAEB</span><span class="rev">BE&nbsp;AWARE</span></span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#manifesto">The idea</a>
-        <a href="#pillars">What we're building</a>
-        <a href="#sample">A taste</a>
+        <a href="../">Home</a>
+        <a href="../digest/">Digest</a>
+        <a href="../channel/">Channel</a>
+        <a href="./">Guides</a>
+        <a href="../about/">About</a>
       </nav>
       <a href="#signup" class="btn btn-small">Get the digest</a>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <img src="assets/hero-bg.jpg" alt="" />
-        <div class="hero-shade"></div>
-      </div>
-      <div class="mirror" aria-hidden="true">ERAWAEB</div>
-      <div class="container hero-inner">
-        <p class="eyebrow reveal">ERAWAEB.COM — "BE AWARE," SPELLED BACKWARDS</p>
-        <h1 class="hero-title reveal">BE&nbsp;AWARE<span class="accent">.</span></h1>
-        <p class="hero-sub reveal">
-          A nightly digest, a video channel, and field guides for people who pay attention.
-          No noise. No outrage bait. Just the signal.
-        </p>
-        <!-- TODO: wire to Formspree/Buttondown — replace action="#" with your endpoint URL -->
-        <form class="digest-form reveal" action="#" method="POST" novalidate>
-          <label class="sr-only" for="email-hero">Email address</label>
-          <input type="email" id="email-hero" name="email" placeholder="you@example.com" autocomplete="email" required />
-          <button type="submit" class="btn">Get the digest</button>
-          <p class="form-note">One short email a night. Unsubscribe anytime.</p>
-          <p class="form-error" role="alert" hidden>That email doesn't look right — try again.</p>
-        </form>
-      </div>
-      <a href="#manifesto" class="scroll-cue" aria-label="Scroll to the idea">
-        <span></span>
-      </a>
-    </section>
-
-    <!-- MARQUEE -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>BE AWARE</span><i>✕</i><span>READ THE FINE PRINT</span><i>✕</i><span>TRUST, THEN VERIFY</span><i>✕</i><span>QUESTION THE DEFAULT</span><i>✕</i>
-        <span>BE AWARE</span><i>✕</i><span>READ THE FINE PRINT</span><i>✕</i><span>TRUST, THEN VERIFY</span><i>✕</i><span>QUESTION THE DEFAULT</span><i>✕</i>
-      </div>
-    </div>
-
-    <!-- MANIFESTO -->
-    <section class="section manifesto" id="manifesto">
+  <main>
+    <section class="page-hero">
       <div class="container">
-        <p class="eyebrow reveal">THE IDEA</p>
-        <h2 class="reveal">Most people scroll.<br />We read.</h2>
-        <div class="manifesto-grid">
-          <div class="reveal">
-            <p class="lede">
-              The world runs on fine print, dark patterns, and stories engineered
-              to make you react instead of think.
-            </p>
-            <p>
-              Being aware isn't paranoia — it's literacy. ERAWAEB is training for
-              your attention: one email, one video, one guide at a time.
-              Short enough to finish. Sharp enough to matter.
-            </p>
-          </div>
-          <ul class="tenets reveal">
-            <li><span>01</span>Question the default.</li>
-            <li><span>02</span>Read before you sign.</li>
-            <li><span>03</span>Verify before you share.</li>
-          </ul>
-        </div>
+        <p class="crumb reveal"><a href="../">ERAWAEB</a> / GUIDES</p>
+        <h1 class="reveal">Field guides.</h1>
+        <p class="lede reveal">Short playbooks for high-stakes moments. Read one in five minutes, use it for years. Free, always.</p>
       </div>
     </section>
 
-    <!-- PILLARS -->
-    <section class="section pillars" id="pillars">
+    <section class="section">
       <div class="container">
-        <p class="eyebrow reveal">WHAT WE'RE BUILDING</p>
-        <h2 class="reveal">Three ways<br />to stay sharp.</h2>
         <div class="cards">
           <article class="card reveal">
-            <p class="card-num">01</p>
-            <h3>The Digest</h3>
+            <p class="card-num">GUIDE 01</p>
+            <h3>Scam Shield</h3>
             <p>
-              One short email, every night. One story that actually matters.
-              One scam making the rounds. One thing worth knowing.
-              Three minutes, then back to your life.
+              The complete scam-defense playbook: the five tells every scam
+              shares, the verify-before-you-trust checklist, and exactly what
+              to do if you already clicked — or already paid.
             </p>
-            <p class="badge badge-live">FIRST UP</p>
-            <a href="#signup" class="card-link">Join the list →</a>
+            <a href="scam-shield/" class="card-link">Read the guide →</a>
           </article>
           <article class="card reveal">
-            <p class="card-num">02</p>
-            <h3>The Channel</h3>
+            <p class="card-num">GUIDE 02</p>
+            <h3>Pulled Over</h3>
             <p>
-              Faceless short-form video. Scam breakdowns. Viral clip fact-checks.
-              Fine-print explainers. Know-your-rights clips.
-              Minimal talk, maximum signal.
+              Your know-your-rights traffic stop card. What to say, what you
+              don't have to consent to, and how to stay safe — in plain
+              language you can actually remember under stress.
             </p>
-            <p class="badge">COMING SOON</p>
+            <a href="pulled-over/" class="card-link">Read the guide →</a>
           </article>
           <article class="card reveal">
-            <p class="card-num">03</p>
-            <h3>The Guides</h3>
+            <p class="card-num">GUIDE 03</p>
+            <h3>Trial Traps</h3>
             <p>
-              Short, printable field guides. The scam-defense playbook.
-              Renter's rights on one page. What to do if you're pulled over —
-              on a card in your wallet.
+              How "free trials" convert to paid subscriptions by design, how to
+              escape the cancellation maze, and a simple system so you never
+              pay for a trial you forgot again.
             </p>
-            <p class="badge">COMING SOON</p>
+            <a href="trial-traps/" class="card-link">Read the guide →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SAMPLE ISSUE -->
-    <section class="section sample" id="sample">
-      <div class="container">
-        <p class="eyebrow reveal">A TASTE</p>
-        <h2 class="reveal">Tonight's issue<br />would look like this.</h2>
-        <article class="issue reveal" aria-label="Sample digest issue">
-          <header class="issue-head">
-            <span>THE BE AWARE DIGEST</span>
-            <span>ISSUE #001 — SAMPLE</span>
-          </header>
-          <div class="issue-block">
-            <p class="issue-label">THE STORY</p>
-            <h4>The "free trial" that wasn't.</h4>
-            <p>
-              Somewhere right now, a free trial you forgot about just became a
-              $14.99/month subscription. Trials that convert silently aren't a
-              bug — they're the business model. The move: the moment you start a
-              trial, set a reminder for the day before it ends. Two minutes now
-              beats an hour on hold later.
-            </p>
-          </div>
-          <div class="issue-block">
-            <p class="issue-label">THE SCAM</p>
-            <h4>The package you never ordered.</h4>
-            <p>
-              Texts claiming a package is "on hold" or "couldn't be delivered,"
-              with a link to reschedule. Carriers don't text you links out of
-              nowhere. The move: never tap the link. Open the carrier's app or
-              site yourself and check the tracking number there.
-            </p>
-          </div>
-          <div class="issue-block">
-            <p class="issue-label">WORTH KNOWING</p>
-            <h4>Freeze your credit in ten minutes.</h4>
-            <p>
-              A credit freeze is free under federal law and stops anyone from
-              opening accounts in your name — including you, until you lift it.
-              Set it up at all three bureaus: Equifax, Experian, TransUnion.
-              Ten minutes of boring paperwork is the cheapest identity-theft
-              insurance there is.
-            </p>
-          </div>
-          <footer class="issue-foot">
-            <span>Real issues. Real signal. Every night.</span>
-          </footer>
-        </article>
-      </div>
-    </section>
-
-    <!-- SIGNUP -->
-    <section class="section signup" id="signup">
-      <div class="container signup-inner">
-        <p class="eyebrow reveal">JOIN THE LIST</p>
-        <h2 class="reveal">Get tonight's issue.</h2>
-        <p class="reveal signup-sub">One short email a night. Read it in three minutes. Unsubscribe anytime.</p>
-        <!-- TODO: wire to Formspree/Buttondown — replace action="#" with your endpoint URL -->
-        <form class="digest-form reveal" action="#" method="POST" novalidate>
-          <label class="sr-only" for="email-cta">Email address</label>
-          <input type="email" id="email-cta" name="email" placeholder="you@example.com" autocomplete="email" required />
-          <button type="submit" class="btn">Get the digest</button>
-          <p class="form-error" role="alert" hidden>That email doesn't look right — try again.</p>
+    <section class="section band" id="signup">
+      <div class="container band-inner">
+        <p class="eyebrow reveal">NEW GUIDES, FIRST</p>
+        <h2 class="reveal">Guides drop to subscribers first.</h2>
+        <p class="reveal signup-sub">Join the digest and every new field guide lands in your inbox the day it publishes.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/beaware" method="post" class="embeddable-buttondown-form digest-form reveal">
+          <label class="sr-only" for="bd-email">Enter your email</label>
+          <input type="email" name="email" id="bd-email" placeholder="you@example.com" autocomplete="email" required />
+          <input type="submit" value="Get the digest" class="btn" />
+          <p class="form-note">Free. One email a night. Unsubscribe anytime.</p>
         </form>
       </div>
     </section>
@@ -207,14 +100,23 @@
       <div>
         <p class="footer-brand">ERAWAEB</p>
         <p class="footer-tag">"Be aware," spelled backwards.</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="../">Home</a>
+          <a href="../digest/">Digest</a>
+          <a href="../channel/">Channel</a>
+          <a href="./">Guides</a>
+          <a href="../about/">About</a>
+          <a href="../contact/">Contact</a>
+          <a href="https://buttondown.com/beaware">Newsletter</a>
+        </nav>
       </div>
       <div class="footer-meta">
-        <p>© <span id="year">2026</span> ERAWAEB. All rights reserved.</p>
+        <p>© <span id="year">2026</span> ERAWAEB — Be aware.</p>
         <p>Built for people who pay attention.</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
