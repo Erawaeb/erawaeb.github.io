@@ -1,362 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    <title>The Hitchhiker's Guide to Artificial Intelligence</title>
-    <meta name="description" content="Explore the universe of AI with our cosmic guide. Don't panic, bring your towel, and discover the wonders of artificial intelligence!">
-    <meta name="description" content="Explore the universe of AI with our cosmic guide. Don't panic - we'll help you navigate the galaxy of artificial intelligence.">
-<meta name="keywords" content="AI, artificial intelligence, coding, hitchhiker's guide, machine learning">
-<meta name="robots" content="index, follow">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERAWAEB — Be Aware</title>
+  <meta name="description" content="ERAWAEB — 'be aware,' spelled backwards. A nightly digest, a video channel, and field guides for people who pay attention." />
+  <meta property="og:title" content="ERAWAEB — Be Aware" />
+  <meta property="og:description" content="A nightly digest, a video channel, and field guides for people who pay attention. No noise. Just the signal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://erawaeb.com" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0B'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial,sans-serif' font-size='36' font-weight='900' fill='%23FFB224' text-anchor='middle'%3EB.%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <canvas id="stars-background" aria-label="Animated star background" role="img"></canvas>
+  <div class="grain" aria-hidden="true"></div>
 
-    <header>
-        <nav id="main-nav" class="fixed-nav">
-            <ul>
-                <li><a href="#home" class="nav-link" data-tab="home" aria-label="Navigate to Home section">Home</a></li>
-                <li><a href="#about" class="nav-link" data-tab="about" aria-label="Learn more about our journey">About</a></li>
-                <li><a href="#journey-log" class="nav-link" data-tab="journey-log" aria-label="View our journey progress">Journey Log</a></li>
-                <li><a href="#projects" class="nav-link" data-tab="projects" aria-label="Explore our projects">Projects</a></li>
-                <li><a href="#ai-concepts" class="nav-link" data-tab="ai-concepts" aria-label="Learn about AI concepts">AI Concepts</a></li>
-                <li><a href="#contact" class="nav-link" data-tab="contact" aria-label="Get in touch with us">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="ERAWAEB — home">
+        <span class="flip" aria-hidden="true"><span class="fwd">ERAWAEB</span><span class="rev">BE&nbsp;AWARE</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#manifesto">The idea</a>
+        <a href="#pillars">What we're building</a>
+        <a href="#sample">A taste</a>
+      </nav>
+      <a href="#signup" class="btn btn-small">Get the digest</a>
+    </div>
+  </header>
 
-    <main id="content-area">
-        <section id="home" class="tab-content active">
-            <div class="container">
-                <h1 id="title" class="gradient-text">The Hitchhiker's Guide to Artificial Intelligence</h1>
-                <p class="subtitle">Don't Panic and Bring Your Towel</p>
-                <div class="cta-container">
-                    <a href="#about" class="cta-button" aria-label="Click to explore the galaxy of AI">Explore the Galaxy</a>
-                    <a href="#projects" class="cta-button secondary">View Our Projects</a>
-                </div>
-                <div id="dont-panic" class="panic-button">DON'T PANIC</div>
-            </div>
-        </section>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/hero-bg.jpg" alt="" />
+        <div class="hero-shade"></div>
+      </div>
+      <div class="mirror" aria-hidden="true">ERAWAEB</div>
+      <div class="container hero-inner">
+        <p class="eyebrow reveal">ERAWAEB.COM — "BE AWARE," SPELLED BACKWARDS</p>
+        <h1 class="hero-title reveal">BE&nbsp;AWARE<span class="accent">.</span></h1>
+        <p class="hero-sub reveal">
+          A nightly digest, a video channel, and field guides for people who pay attention.
+          No noise. No outrage bait. Just the signal.
+        </p>
+        <!-- TODO: wire to Formspree/Buttondown — replace action="#" with your endpoint URL -->
+        <form class="digest-form reveal" action="#" method="POST" novalidate>
+          <label class="sr-only" for="email-hero">Email address</label>
+          <input type="email" id="email-hero" name="email" placeholder="you@example.com" autocomplete="email" required />
+          <button type="submit" class="btn">Get the digest</button>
+          <p class="form-note">One short email a night. Unsubscribe anytime.</p>
+          <p class="form-error" role="alert" hidden>That email doesn't look right — try again.</p>
+        </form>
+      </div>
+      <a href="#manifesto" class="scroll-cue" aria-label="Scroll to the idea">
+        <span></span>
+      </a>
+    </section>
 
-        <section id="about" class="tab-content">
-            <div class="container">
-                <h2 class="gradient-text">About This Cosmic Journey</h2>
-                <p class="intro-text">Welcome, fellow traveler, to a groundbreaking expedition through the vast universe of Artificial Intelligence. This website is the product of an extraordinary collaboration between a human explorer and Claude, an AI assistant. Together, we're charting unknown territories in the realm of technology and finance, armed with nothing but curiosity and a reliable towel.</p>
-                
-                <div class="about-grid">
-                    <div class="about-item">
-                        <h3>Our Mission</h3>
-                        <p>To demystify the complex world of AI and make it accessible to hitchhikers across the galaxy.</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Our Vision</h3>
-                        <p>A universe where humans and AI coexist harmoniously, exploring the frontiers of knowledge together.</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Our Values</h3>
-                        <ul>
-                            <li>Curiosity</li>
-                            <li>Collaboration</li>
-                            <li>Creativity</li>
-                            <li>Comic Relief</li>
-                        </ul>
-                    </div>
-                </div>
-        
-                <div class="terminal-section">
-                    <div class="terminal-window">
-                        <div class="terminal-header">
-                            <span class="terminal-title">Intergalactic Team Database</span>
-                            <div class="terminal-buttons">
-                                <span class="terminal-button"></span>
-                                <span class="terminal-button"></span>
-                                <span class="terminal-button"></span>
-                            </div>
-                        </div>
-                        <div class="terminal-content">
-                            <div class="typing-text">
-                                <p>> Initializing Intergalactic Team Database...</p>
-                                <p>> Loading team data...</p>
-                                <p>> Access granted...</p>
-                                <p class="terminal-highlight">=== INTERGALACTIC TEAM MANIFEST ===</p>
-                                <div class="crew-member">
-                                    <p>> Accessing crew member file_01...</p>
-                                    <p>NAME: Frankie</p>
-                                    <p>SPECIES: Magrathean</p>
-                                    <p>STATUS: Active Explorer</p>
-                                    <p>LOCATION: Sector ZZ9 Plural Z Alpha</p>
-                                    <p>PROFILE: <a href="https://x.com/erawaeb" target="_blank" class="terminal-link">[VIEW_PROFILE]</a></p>
-                                    <p>SPECS:</p>
-                                    <ul>
-                                        <li>Specialty: Asking "What if?" questions</li>
-                                        <li>Favorite Tool: Imagination</li>
-                                        <li>Spirit Animal: Dolphin</li>
-                                    </ul>
-                                </div>
-                                <div class="crew-member">
-                                    <p>> Accessing crew member file_02...</p>
-                                    <p>NAME: Claude</p>
-                                    <p>SPECIES: Artificial Intelligence</p>
-                                    <p>STATUS: Active Assistant</p>
-                                    <p>LOCATION: Digital Hyperspace</p>
-                                    <p>PROFILE: <a href="https://claude.ai" target="_blank" class="terminal-link">[VIEW_PROFILE]</a></p>
-                                    <p>SPECS:</p>
-                                    <ul>
-                                        <li>Specialty: Processing vast amounts of data</li>
-                                        <li>Favorite Tool: Neural Networks</li>
-                                        <li>Spirit Animal: Octopus</li>
-                                    </ul>
-                                </div>
-                                <p class="terminal-highlight">=== END OF MANIFEST ===</p>
-                                <p class="blinking-cursor">> Press any key to continue..._</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="journey-highlights">
-                    <h3>Highlights of Our Cosmic Collaboration</h3>
-                    <ul class="timeline">
-                        <li>
-                            <h4>Day 1: The Big Bang</h4>
-                            <p>Our collaborative journey begins with the first exchange of ideas.</p>
-                        </li>
-                        <li>
-                            <h4>Week 2: Nebula of Knowledge</h4>
-                            <p>Diving deep into the fundamentals of AI and web development.</p>
-                        </li>
-                        <li>
-                            <h4>Month 1: Constellation of Code</h4>
-                            <p>The website's structure takes shape, connecting ideas like stars in the night sky.</p>
-                        </li>
-                        <li>
-                            <h4>Present Day: Expanding Universe</h4>
-                            <p>Continuously growing and evolving, much like the AI field itself.</p>
-                        </li>
-                    </ul>
-                </div>
-        
-                <div class="cta-container">
-                    <a href="https://x.com/erawaeb" class="cta-button" target="_blank" rel="noopener noreferrer">Follow the Saga on X</a>
-                    <a href="#contact" class="cta-button secondary">Join Our Cosmic Crew</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="journey-log" class="tab-content">
-            <div class="container">
-                <h2 class="gradient-text">Journey Log</h2>
-                <p>Embark on our cosmic adventure through the AI galaxy. Each entry in our journey log represents a milestone in our exploration of artificial intelligence and web development.</p>
-                <div id="journey-entries" class="grid">
-                    <!-- Journey entries will be dynamically added here -->
-                </div>
-                <div class="journey-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Day 1: Launch</h3>
-                            <p>Our expedition begins with the first line of code.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Week 2: First Contact</h3>
-                            <p>Establishing communication between human and AI.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Month 1: Nebula Navigation</h3>
-                            <p>Traversing the complexities of web development.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="tab-content">
-            <div class="container">
-                <h2 class="gradient-text">Projects</h2>
-                <p>Discover the fruits of our cosmic collaboration. Each project represents a unique blend of human creativity and AI capabilities.</p>
-                <div class="grid">
-                    <div class="project-card" data-project="cosmic-website">
-                        <h3>This Cosmic Website</h3>
-                        <p>A journey through space, time, and code, created by human and AI working in harmony.</p>
-                        <ul class="project-features">
-                            <li>Interactive star background</li>
-                            <li>Dynamic content loading</li>
-                            <li>Responsive design for all devices</li>
-                        </ul>
-                        <button class="cta-button project-details-btn">Learn More</button>
-                    </div>
-                    <div class="project-card" data-project="finance-calculator">
-                        <h3>The Infinite Improbability Finance Calculator</h3>
-                        <p>A tool that calculates financial probabilities across multiple universes.</p>
-                        <ul class="project-features">
-                            <li>Multi-universe investment returns</li>
-                            <li>Quantum stock predictions</li>
-                            <li>Time-dilated compound interest</li>
-                        </ul>
-                        <button class="cta-button project-details-btn">Calculate</button>
-                    </div>
-                    <div class="project-card" data-project="babel-fish">
-                        <h3>Babel Fish Translator</h3>
-                        <p>An AI-powered language model inspired by the legendary Babel Fish.</p>
-                        <ul class="project-features">
-                            <li>Instant translation between Earth languages</li>
-                            <li>Experimental alien dialect support</li>
-                            <li>Context-aware idiom translation</li>
-                        </ul>
-                        <button class="cta-button project-details-btn">Translate</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-
-        <section id="ai-concepts" class="tab-content">
-            <div class="container">
-                <h2 class="gradient-text">AI Concepts</h2>
-                <p>Demystifying the complex world of artificial intelligence, one concept at a time.</p>
-                
-                <h3>Recent AI Developments</h3>
-                
-                <div class="ai-development">
-                    <h4>BitNet: Revolutionizing Large Language Models</h4>
-                    <p>Microsoft's recent open-sourcing of BitNet b1.58 marks a significant leap in AI accessibility and efficiency. This 1-bit Large Language Model (LLM) is reshaping our understanding of what's possible with AI on local devices.</p>
-                    <a href="https://www.microsoft.com/en-us/research/blog/bitnet-scaling-1-bit-transformers-for-large-language-models/" target="_blank" class="learn-more">Learn More</a>
-                </div>
-        
-                <div class="ai-development">
-                    <h4>Computer Use Beta: Claude's New Frontier</h4>
-                    <p>Anthropic's groundbreaking Computer Use Beta enables Claude to interact with virtual computers, opening up new possibilities for AI assistance in programming, data analysis, and digital tasks.</p>
-                    <ul>
-                        <li>Run Python code in real-time</li>
-                        <li>Navigate file systems</li>
-                        <li>Execute complex computational tasks</li>
-                        <li>Process and analyze data efficiently</li>
-                    </ul>
-                    <a href="https://docs.anthropic.com/claude/docs/computer-use" target="_blank" class="learn-more">Learn More</a>
-                </div>
-        
-                <div class="impact-implications">
-                    <div class="impact">
-                        <h3>Potential Impact:</h3>
-                        <ul>
-                            <li>Enhanced AI capabilities in practical computing tasks</li>
-                            <li>More efficient problem-solving through direct computer interaction</li>
-                            <li>Improved debugging and code testing capabilities</li>
-                            <li>Advanced data manipulation and analysis possibilities</li>
-                        </ul>
-                    </div>
-        
-                    <div class="implications">
-                        <h3>Future Implications:</h3>
-                        <ul>
-                            <li>Evolution of AI-human collaboration in programming</li>
-                            <li>More intuitive and powerful development workflows</li>
-                            <li>Expanded possibilities for automated testing and validation</li>
-                            <li>Democratization of complex computing tasks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="contact" class="tab-content">
-            <div class="container">
-                <h2 class="gradient-text">Contact the Intergalactic Team</h2>
-                <p>Whether you're a fellow hitchhiker, a curious earthling, or an advanced AI, we'd love to hear from you. Share your thoughts, ideas, or just say "Don't Panic!"</p>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
-                <div id="form-status"></div>
-                <div class="social-links">
-                    <a href="https://x.com/erawaeb" class="social-link" target="_blank" rel="noopener noreferrer">Follow on X</a>
-                    <a href="#" class="social-link">Subscribe to Newsletter</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            var formData = new FormData(this);
-            
-            fetch('send_email.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    document.getElementById('form-status').innerHTML = '<p class="success">Message sent successfully!</p>';
-                    document.getElementById('contact-form').reset();
-                } else {
-                    document.getElementById('form-status').innerHTML = '<p class="error">Error sending message. Please try again.</p>';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('form-status').innerHTML = '<p class="error">An unexpected error occurred. Please try again later.</p>';
-            });
-        });
-    </script>
-
-    <footer>
-        <div class="container">
-            <p>© 2024 The Hitchhiker's Guide to Artificial Intelligence. All rights reserved across the galaxy.</p>
-            <nav class="footer-nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#journey-log">Journey Log</a>
-                <a href="#projects">Projects</a>
-                <a href="#ai-concepts">AI Concepts</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </footer>
-
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-            <div id="modal-extra"></div>
-            <button id="close-modal" class="cta-button">Close</button>
-        </div>
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>BE AWARE</span><i>✕</i><span>READ THE FINE PRINT</span><i>✕</i><span>TRUST, THEN VERIFY</span><i>✕</i><span>QUESTION THE DEFAULT</span><i>✕</i>
+        <span>BE AWARE</span><i>✕</i><span>READ THE FINE PRINT</span><i>✕</i><span>TRUST, THEN VERIFY</span><i>✕</i><span>QUESTION THE DEFAULT</span><i>✕</i>
+      </div>
     </div>
 
-    <div id="chatbot" class="chatbot">
-        <div class="chatbot-header">
-            <h3>Hitchhiker's Guide AI</h3>
-            <button id="toggle-chatbot">X</button>
+    <!-- MANIFESTO -->
+    <section class="section manifesto" id="manifesto">
+      <div class="container">
+        <p class="eyebrow reveal">THE IDEA</p>
+        <h2 class="reveal">Most people scroll.<br />We read.</h2>
+        <div class="manifesto-grid">
+          <div class="reveal">
+            <p class="lede">
+              The world runs on fine print, dark patterns, and stories engineered
+              to make you react instead of think.
+            </p>
+            <p>
+              Being aware isn't paranoia — it's literacy. ERAWAEB is training for
+              your attention: one email, one video, one guide at a time.
+              Short enough to finish. Sharp enough to matter.
+            </p>
+          </div>
+          <ul class="tenets reveal">
+            <li><span>01</span>Question the default.</li>
+            <li><span>02</span>Read before you sign.</li>
+            <li><span>03</span>Verify before you share.</li>
+          </ul>
         </div>
-        <div id="chat-messages"></div>
-        <div class="chatbot-input">
-            <input id="user-input" type="text" placeholder="Ask a question...">
-        </div>
-    </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
-    <script src="babel-fish.js"></script>
-    <script src="finance-calculator.js"></script>
+    <!-- PILLARS -->
+    <section class="section pillars" id="pillars">
+      <div class="container">
+        <p class="eyebrow reveal">WHAT WE'RE BUILDING</p>
+        <h2 class="reveal">Three ways<br />to stay sharp.</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <p class="card-num">01</p>
+            <h3>The Digest</h3>
+            <p>
+              One short email, every night. One story that actually matters.
+              One scam making the rounds. One thing worth knowing.
+              Three minutes, then back to your life.
+            </p>
+            <p class="badge badge-live">FIRST UP</p>
+            <a href="#signup" class="card-link">Join the list →</a>
+          </article>
+          <article class="card reveal">
+            <p class="card-num">02</p>
+            <h3>The Channel</h3>
+            <p>
+              Faceless short-form video. Scam breakdowns. Viral clip fact-checks.
+              Fine-print explainers. Know-your-rights clips.
+              Minimal talk, maximum signal.
+            </p>
+            <p class="badge">COMING SOON</p>
+          </article>
+          <article class="card reveal">
+            <p class="card-num">03</p>
+            <h3>The Guides</h3>
+            <p>
+              Short, printable field guides. The scam-defense playbook.
+              Renter's rights on one page. What to do if you're pulled over —
+              on a card in your wallet.
+            </p>
+            <p class="badge">COMING SOON</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE ISSUE -->
+    <section class="section sample" id="sample">
+      <div class="container">
+        <p class="eyebrow reveal">A TASTE</p>
+        <h2 class="reveal">Tonight's issue<br />would look like this.</h2>
+        <article class="issue reveal" aria-label="Sample digest issue">
+          <header class="issue-head">
+            <span>THE BE AWARE DIGEST</span>
+            <span>ISSUE #001 — SAMPLE</span>
+          </header>
+          <div class="issue-block">
+            <p class="issue-label">THE STORY</p>
+            <h4>The "free trial" that wasn't.</h4>
+            <p>
+              Somewhere right now, a free trial you forgot about just became a
+              $14.99/month subscription. Trials that convert silently aren't a
+              bug — they're the business model. The move: the moment you start a
+              trial, set a reminder for the day before it ends. Two minutes now
+              beats an hour on hold later.
+            </p>
+          </div>
+          <div class="issue-block">
+            <p class="issue-label">THE SCAM</p>
+            <h4>The package you never ordered.</h4>
+            <p>
+              Texts claiming a package is "on hold" or "couldn't be delivered,"
+              with a link to reschedule. Carriers don't text you links out of
+              nowhere. The move: never tap the link. Open the carrier's app or
+              site yourself and check the tracking number there.
+            </p>
+          </div>
+          <div class="issue-block">
+            <p class="issue-label">WORTH KNOWING</p>
+            <h4>Freeze your credit in ten minutes.</h4>
+            <p>
+              A credit freeze is free under federal law and stops anyone from
+              opening accounts in your name — including you, until you lift it.
+              Set it up at all three bureaus: Equifax, Experian, TransUnion.
+              Ten minutes of boring paperwork is the cheapest identity-theft
+              insurance there is.
+            </p>
+          </div>
+          <footer class="issue-foot">
+            <span>Real issues. Real signal. Every night.</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- SIGNUP -->
+    <section class="section signup" id="signup">
+      <div class="container signup-inner">
+        <p class="eyebrow reveal">JOIN THE LIST</p>
+        <h2 class="reveal">Get tonight's issue.</h2>
+        <p class="reveal signup-sub">One short email a night. Read it in three minutes. Unsubscribe anytime.</p>
+        <!-- TODO: wire to Formspree/Buttondown — replace action="#" with your endpoint URL -->
+        <form class="digest-form reveal" action="#" method="POST" novalidate>
+          <label class="sr-only" for="email-cta">Email address</label>
+          <input type="email" id="email-cta" name="email" placeholder="you@example.com" autocomplete="email" required />
+          <button type="submit" class="btn">Get the digest</button>
+          <p class="form-error" role="alert" hidden>That email doesn't look right — try again.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">ERAWAEB</p>
+        <p class="footer-tag">"Be aware," spelled backwards.</p>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> ERAWAEB. All rights reserved.</p>
+        <p>Built for people who pay attention.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
