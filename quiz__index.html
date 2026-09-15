@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scam or Legit? — The Arena | ERAWAEB</title>
+  <meta name="description" content="12 rounds. One question: scam or legit? Train your scam radar in the Be Aware arena." />
+  <meta property="og:title" content="Scam or Legit? — ERAWAEB Arena" />
+  <meta property="og:description" content="12 rounds. One question. Don't get played." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://erawaeb.com/quiz/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0B'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial,sans-serif' font-size='36' font-weight='900' fill='%23FFB224' text-anchor='middle'%3EB.%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="../" class="brand" aria-label="ERAWAEB — home">
+        <span class="flip" aria-hidden="true"><span class="fwd">ERAWAEB</span><span class="rev">BE&nbsp;AWARE</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../">Home</a>
+        <a href="../digest/">Digest</a>
+        <a href="../channel/">Channel</a>
+        <a href="../guides/">Guides</a>
+        <a href="../about/">About</a>
+        <a href="./" class="nav-play">PLAY</a>
+      </nav>
+      <a href="#signup" class="btn btn-small">Get the digest</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="qz-hero">
+      <div class="qz-wrap">
+        <p class="eyebrow reveal">THE ARENA</p>
+        <h1 class="reveal">SCAM <span class="q">?</span> LEGIT<span class="q">.</span></h1>
+        <p class="qz-hook reveal">12 rounds. One question. <strong>Don't get played.</strong></p>
+        <a href="play/" class="btn-play reveal">▶ PLAY</a>
+
+        <div class="qz-steps reveal">
+          <div class="qz-step"><span class="ico">👁️</span><p>SPOT IT</p></div>
+          <div class="qz-step"><span class="ico">⚡</span><p>CALL IT</p></div>
+          <div class="qz-step"><span class="ico">🔥</span><p>STREAK UP</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="qz-chips">
+      <div class="qz-wrap">
+        <h3 class="reveal">PICK YOUR POISON</h3>
+        <div class="chip-row reveal">
+          <a class="chip hot" href="play/">Everything</a>
+          <a class="chip" href="play/?cat=texts">Texts</a>
+          <a class="chip" href="play/?cat=dms">DMs</a>
+          <a class="chip" href="play/?cat=gambling">Gambling traps</a>
+          <a class="chip" href="play/?cat=toogood">Too good to be true</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAILY CHALLENGE -->
+    <section>
+      <div class="qz-wrap">
+        <a href="play/?daily" class="daily-card reveal" id="daily-card">
+          <span class="tag">⚡ DAILY CHALLENGE</span>
+          <p class="big">One round. One call.</p>
+          <p class="sub" id="daily-sub">One round. One call. Streaks count.</p>
+          <p class="sub" id="daily-cat" style="margin-top:.4rem;color:var(--accent)"></p>
+        </a>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="qz-stats">
+      <div class="qz-wrap">
+        <h3 class="reveal">YOUR RECORD</h3>
+        <div class="stat-row reveal">
+          <div class="stat"><span class="num" id="stat-best">0</span><span class="lbl">BEST STREAK</span></div>
+          <div class="stat"><span class="num" id="stat-rounds">0</span><span class="lbl">ROUNDS PLAYED</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNUP -->
+    <section class="section signup band" id="signup">
+      <div class="container band-inner">
+        <p class="eyebrow reveal">JOIN THE LIST</p>
+        <h2 class="reveal">Get tonight's issue.</h2>
+        <p class="reveal signup-sub">One short email a night. Read it in three minutes. Unsubscribe anytime.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/beaware" method="post" class="embeddable-buttondown-form digest-form reveal">
+          <label class="sr-only" for="bd-email-qz">Enter your email</label>
+          <input type="email" name="email" id="bd-email-qz" placeholder="you@example.com" autocomplete="email" required />
+          <input type="submit" value="Get the digest" class="btn" />
+          <p class="form-note">Free. One email a night. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">ERAWAEB</p>
+        <p class="footer-tag">Pay attention.</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="../">Home</a>
+          <a href="../digest/">Digest</a>
+          <a href="../channel/">Channel</a>
+          <a href="../guides/">Guides</a>
+          <a href="../about/">About</a>
+          <a href="../contact/">Contact</a>
+          <a href="https://buttondown.com/beaware">Newsletter</a>
+        </nav>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> ERAWAEB — Be aware.</p>
+        <p>Built for people who pay attention.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
