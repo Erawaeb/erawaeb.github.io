@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="quiz/quiz.css" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -29,7 +30,9 @@
         <a href="channel/">Channel</a>
         <a href="guides/">Guides</a>
         <a href="about/">About</a>
+        <a href="quiz/" class="nav-play">PLAY</a>
       </nav>
+      <a href="quiz/" class="nav-play-mobile">▶ PLAY</a>
       <a href="#signup" class="btn btn-small">Get the digest</a>
     </div>
   </header>
@@ -54,6 +57,7 @@
           <input type="email" name="email" id="bd-email-hero" placeholder="you@example.com" autocomplete="email" required />
           <input type="submit" value="Get the digest" class="btn" />
           <p class="form-note">One short email a night. Unsubscribe anytime.</p>
+          <p class="form-note">Not ready to commit? <a href="quiz/" class="card-link">Play Scam or Legit? →</a></p>
         </form>
       </div>
       <a href="#manifesto" class="scroll-cue" aria-label="Scroll to the idea">
@@ -78,11 +82,11 @@
           <div class="reveal">
             <p class="lede">
               The world runs on fine print, dark patterns, and stories engineered
-              to make you react instead of think.
+              to make you react, not think.
             </p>
             <p>
-              Being aware isn't paranoia — it's literacy. ERAWAEB is training for
-              your attention: one email, one video, one guide at a time.
+              Awareness isn't paranoia — it's literacy. ERAWAEB trains your
+              attention: one email, one video, one guide at a time.
               Short enough to finish. Sharp enough to matter.
             </p>
           </div>
@@ -105,9 +109,9 @@
             <p class="card-num">01</p>
             <h3>The Digest</h3>
             <p>
-              One short email, every night. One story that actually matters.
-              One scam making the rounds. One thing worth knowing.
-              Three minutes, then back to your life.
+              One short email a night. One story that matters, one scam going
+              around, one thing worth knowing. Three minutes, then back to
+              your life.
             </p>
             <p class="badge badge-live">LIVE NOW</p>
             <a href="digest/" class="card-link">Read the archive →</a>
@@ -116,8 +120,8 @@
             <p class="card-num">02</p>
             <h3>The Channel</h3>
             <p>
-              Faceless short-form video. Scam breakdowns. Viral clip fact-checks.
-              Fine-print explainers. Know-your-rights clips.
+              Faceless short-form video: scam breakdowns, viral fact checks,
+              fine-print explainers, know-your-rights clips.
               Minimal talk, maximum signal.
             </p>
             <p class="badge">IN PRODUCTION</p>
@@ -127,9 +131,9 @@
             <p class="card-num">03</p>
             <h3>The Guides</h3>
             <p>
-              Short, practical field guides. The scam-defense playbook.
-              What to do if you're pulled over — on a card in your wallet.
-              How free trials really work. How gambling products keep you playing.
+              Short, practical field guides: the scam-defense playbook, what to
+              do when pulled over, how free trials really work, how betting
+              products keep you playing.
             </p>
             <p class="badge badge-live">LIVE NOW</p>
             <a href="guides/" class="card-link">Browse the guides →</a>
@@ -162,6 +166,20 @@
             <span><a href="digest/004/" style="color: var(--accent);">Read the full issue →</a></span>
           </footer>
         </article>
+      </div>
+    </section>
+
+    <!-- QUIZ TEASER -->
+    <section class="section qz-teaser" id="arena">
+      <div class="container">
+        <p class="eyebrow reveal">THE ARENA</p>
+        <p class="big reveal">SCAM <span class="q">?</span> LEGIT<span class="q">.</span></p>
+        <p class="hook reveal">12 rounds. One question. <strong>Don't get played.</strong></p>
+        <div class="qz-mini-row reveal" aria-hidden="true">
+          <span class="qz-mini">🚩 SCAM</span>
+          <span class="qz-mini l">✅ LEGIT</span>
+        </div>
+        <a href="quiz/" class="btn-play reveal">▶ PLAY</a>
       </div>
     </section>
 
