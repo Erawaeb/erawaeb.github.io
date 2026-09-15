@@ -10,14 +10,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://erawaeb.com" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0B'/%3E%3Ctext x='32' y='45' font-family='Arial Black,Arial,sans-serif' font-size='36' font-weight='900' fill='%23FFB224' text-anchor='middle'%3EB.%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="quiz/quiz.css" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
   <header class="nav" id="nav">
     <div class="container nav-inner">
@@ -46,8 +44,9 @@
       </div>
       <div class="mirror" aria-hidden="true">ERAWAEB</div>
       <div class="container hero-inner">
+        <a href="digest/004/" class="hero-live reveal"><span class="dot"></span>ISSUE #004 — OUT NOW</a>
         <p class="eyebrow reveal">ERAWAEB.COM</p>
-        <h1 class="hero-title reveal">BE&nbsp;AWARE<span class="accent">.</span></h1>
+        <h1 class="hero-title reveal"><span class="grad">BE&nbsp;AWARE</span><span class="accent">.</span></h1>
         <p class="hero-sub reveal">
           A nightly digest, a video channel, and field guides for people who pay attention.
           No noise. No outrage bait. Just the signal.
@@ -57,26 +56,29 @@
           <input type="email" name="email" id="bd-email-hero" placeholder="you@example.com" autocomplete="email" required />
           <input type="submit" value="Get the digest" class="btn" />
           <p class="form-note">One short email a night. Unsubscribe anytime.</p>
-          <p class="form-note">Not ready to commit? <a href="quiz/" class="card-link">Play Scam or Legit? →</a></p>
         </form>
+        <div class="hero-alt reveal">
+          <span class="hero-alt-or">Not ready to commit?</span>
+          <a href="quiz/" class="btn-ghost">▶&nbsp; Play Scam or Legit?</a>
+        </div>
       </div>
       <a href="#manifesto" class="scroll-cue" aria-label="Scroll to the idea">
         <span></span>
       </a>
     </section>
 
-    <!-- MARQUEE -->
+    <!-- RED FLAG TICKER — real scams, straight from the archive -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>BE AWARE</span><i>✕</i><span>READ THE FINE PRINT</span><i>✕</i><span>TRUST, THEN VERIFY</span><i>✕</i><span>QUESTION THE DEFAULT</span><i>✕</i>
-        <span>BE AWARE</span><i>✕</i><span>READ THE FINE PRINT</span><i>✕</i><span>TRUST, THEN VERIFY</span><i>✕</i><span>QUESTION THE DEFAULT</span><i>✕</i>
+        <span class="tk">THE CAPTCHA THAT HACKS YOU</span><i>🚩</i><span class="tk a">$3.5B IN “UNPAID TOLL” TEXTS</span><i>🚩</i><span class="tk">THE $10,000 LOAN YOU NEVER APPLIED FOR</span><i>🚩</i><span class="tk a">THE PHONE CALL FROM SOMEONE YOU LOVE — WHO ISN’T THEM</span><i>🚩</i><span class="tk">THE QR CODE THAT STOLE YOUR LOGIN</span><i>🚩</i><span class="tk a">THE APARTMENT THAT WASN’T FOR RENT</span><i>🚩</i><span class="tk">THE JOB THAT PAYS YOU TO DO TASKS</span><i>🚩</i><span class="tk a">THE CHECKOUT THAT SHOPPED FOR YOU</span><i>🚩</i><span class="tk">THE PACKAGE YOU NEVER ORDERED</span><i>🚩</i><span class="tk a">THE “FREE TRIAL” THAT WASN’T</span><i>🚩</i>
+        <span class="tk">THE CAPTCHA THAT HACKS YOU</span><i>🚩</i><span class="tk a">$3.5B IN “UNPAID TOLL” TEXTS</span><i>🚩</i><span class="tk">THE $10,000 LOAN YOU NEVER APPLIED FOR</span><i>🚩</i><span class="tk a">THE PHONE CALL FROM SOMEONE YOU LOVE — WHO ISN’T THEM</span><i>🚩</i><span class="tk">THE QR CODE THAT STOLE YOUR LOGIN</span><i>🚩</i><span class="tk a">THE APARTMENT THAT WASN’T FOR RENT</span><i>🚩</i><span class="tk">THE JOB THAT PAYS YOU TO DO TASKS</span><i>🚩</i><span class="tk a">THE CHECKOUT THAT SHOPPED FOR YOU</span><i>🚩</i><span class="tk">THE PACKAGE YOU NEVER ORDERED</span><i>🚩</i><span class="tk a">THE “FREE TRIAL” THAT WASN’T</span><i>🚩</i>
       </div>
     </div>
 
     <!-- MANIFESTO -->
     <section class="section manifesto" id="manifesto">
       <div class="container">
-        <p class="eyebrow reveal">THE IDEA</p>
+        <p class="eyebrow reveal"><span class="sec-no">01</span>THE IDEA</p>
         <h2 class="reveal">Most people scroll.<br />We read.</h2>
         <div class="manifesto-grid">
           <div class="reveal">
@@ -102,11 +104,12 @@
     <!-- PILLARS -->
     <section class="section pillars" id="pillars">
       <div class="container">
-        <p class="eyebrow reveal">WHAT WE'RE BUILDING</p>
+        <p class="eyebrow reveal"><span class="sec-no">02</span>WHAT WE'RE BUILDING</p>
         <h2 class="reveal">Three ways<br />to stay sharp.</h2>
         <div class="cards">
           <article class="card reveal">
             <p class="card-num">01</p>
+            <p class="card-ico" aria-hidden="true">📰</p>
             <h3>The Digest</h3>
             <p>
               One short email a night. One story that matters, one scam going
@@ -118,6 +121,7 @@
           </article>
           <article class="card reveal">
             <p class="card-num">02</p>
+            <p class="card-ico" aria-hidden="true">📺</p>
             <h3>The Channel</h3>
             <p>
               Faceless short-form video: scam breakdowns, viral fact checks,
@@ -129,6 +133,7 @@
           </article>
           <article class="card reveal">
             <p class="card-num">03</p>
+            <p class="card-ico" aria-hidden="true">📖</p>
             <h3>The Guides</h3>
             <p>
               Short, practical field guides: the scam-defense playbook, what to
@@ -145,7 +150,7 @@
     <!-- LATEST ISSUE -->
     <section class="section sample" id="latest">
       <div class="container">
-        <p class="eyebrow reveal">FRESH OFF THE PRESS</p>
+        <p class="eyebrow reveal"><span class="sec-no">03</span>FRESH OFF THE PRESS</p>
         <h2 class="reveal">The latest issue.</h2>
         <article class="issue reveal" aria-label="Latest digest issue">
           <header class="issue-head">
@@ -172,7 +177,7 @@
     <!-- QUIZ TEASER -->
     <section class="section qz-teaser" id="arena">
       <div class="container">
-        <p class="eyebrow reveal">THE ARENA</p>
+        <p class="eyebrow reveal"><span class="sec-no">04</span>THE ARENA</p>
         <p class="big reveal">SCAM <span class="q">?</span> LEGIT<span class="q">.</span></p>
         <p class="hook reveal">12 rounds. One question. <strong>Don't get played.</strong></p>
         <div class="qz-mini-row reveal" aria-hidden="true">
@@ -186,7 +191,7 @@
     <!-- SIGNUP -->
     <section class="section signup band" id="signup">
       <div class="container band-inner">
-        <p class="eyebrow reveal">JOIN THE LIST</p>
+        <p class="eyebrow reveal"><span class="sec-no">05</span>JOIN THE LIST</p>
         <h2 class="reveal">Get tonight's issue.</h2>
         <p class="reveal signup-sub">One short email a night. Read it in three minutes. Unsubscribe anytime.</p>
         <form action="https://buttondown.com/api/emails/embed-subscribe/beaware" method="post" class="embeddable-buttondown-form digest-form reveal">

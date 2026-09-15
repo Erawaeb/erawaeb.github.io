@@ -18,8 +18,21 @@
     onScroll();
   }
 
-  // Reveal-on-scroll
+  // Reveal-on-scroll, with a gentle stagger for grouped siblings.
+  // The delay is cleared after the reveal so hover transitions stay snappy.
   var revealEls = document.querySelectorAll(".reveal");
+  var seenParents = [];
+  revealEls.forEach(function (el) {
+    var p = el.parentElement;
+    var idx = seenParents.indexOf(p);
+    if (idx === -1) { seenParents.push(p); idx = seenParents.length - 1; }
+    var n = 0;
+    for (var i = 0; i < p.children.length; i++) {
+      if (p.children[i] === el) break;
+      if (p.children[i].classList && p.children[i].classList.contains("reveal")) n++;
+    }
+    if (n > 0) el.style.transitionDelay = Math.min(n * 70, 350) + "ms";
+  });
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(
       function (entries) {
@@ -27,6 +40,7 @@
           if (entry.isIntersecting) {
             entry.target.classList.add("in");
             io.unobserve(entry.target);
+            setTimeout(function () { entry.target.style.transitionDelay = ""; }, 900);
           }
         });
       },
