@@ -50,4 +50,23 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
+  // Reading progress bar — only on long-form pages (digest entries, guides).
+  var article = document.querySelector("article.issue, .prose");
+  if (article) {
+    var bar = document.createElement("div");
+    bar.className = "read-progress";
+    bar.setAttribute("aria-hidden", "true");
+    var fill = document.createElement("i");
+    bar.appendChild(fill);
+    document.body.appendChild(bar);
+    var doc = document.documentElement;
+    function onProgress() {
+      var max = doc.scrollHeight - doc.clientHeight;
+      var p = max > 0 ? (doc.scrollTop || document.body.scrollTop) / max : 0;
+      fill.style.transform = "scaleX(" + Math.min(Math.max(p, 0), 1) + ")";
+    }
+    window.addEventListener("scroll", onProgress, { passive: true });
+    window.addEventListener("resize", onProgress);
+    onProgress();
+  }
 })();
