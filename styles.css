@@ -691,6 +691,18 @@ h2 {
   text-align: center;
 }
 
+/* ---------- reading progress bar (injected by script.js on article pages) ---------- */
+.read-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70;
+  pointer-events: none; background: transparent;
+}
+.read-progress i {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hi));
+  box-shadow: 0 0 12px rgba(255, 178, 36, 0.55);
+  transform: scaleX(0); transform-origin: left;
+}
+
 /* ---------- slim scrollbar ---------- */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #0a0a0b; }
